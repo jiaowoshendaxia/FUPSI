@@ -1,0 +1,24 @@
+\begin{table*}[!htbp]
+\centering
+\caption{GAN stability analysis under the raw-count MainSeed protocol. Results are mean $\pm$ standard deviation over three seeds; lower is better.}
+\label{tab:gan-stability}
+\small
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{llccc}
+\toprule
+Dataset & Metric & FUPSI-noGAN & FUPSI-GAN & Lower variant \\
+\midrule
+TaxiBJ P1 & RMSE & $79.7831\pm0.0991$ & $79.9082\pm0.0552$ & noGAN \\
+ & MAE & $42.1963\pm0.1583$ & $42.6554\pm0.0357$ & noGAN \\
+TaxiBJ P2 & RMSE & $100.4263\pm0.0086$ & $100.6009\pm0.0570$ & noGAN \\
+ & MAE & $54.5965\pm0.0115$ & $55.0401\pm0.1324$ & noGAN \\
+TaxiBJ P3 & RMSE & $91.2193\pm0.0077$ & $91.4175\pm0.0360$ & noGAN \\
+ & MAE & $50.2299\pm0.0293$ & $50.7677\pm0.1036$ & noGAN \\
+TaxiBJ P4 & RMSE & $68.7604\pm0.0526$ & $68.9480\pm0.0548$ & noGAN \\
+ & MAE & $36.2869\pm0.0396$ & $36.7210\pm0.0436$ & noGAN \\
+BikeNYC & RMSE & $5.3887\pm0.0589$ & $6.0537\pm0.0542$ & noGAN \\
+ & MAE & $2.6406\pm0.0098$ & $3.0343\pm0.0264$ & noGAN \\
+\bottomrule
+\end{tabular}
+\parbox{\textwidth}{\footnotesize\textit{Note.} The noGAN results are the audited ResidualMainE300P5 runs. MAPE is excluded because zero and near-zero targets make it unstable. With only three paired seeds, statistical tests are descriptive.}
+\end{table*}

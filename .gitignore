@@ -1,0 +1,14 @@
+data/
+fupsi/data/
+saved_model/
+*.pt
+*.pth
+*.npy
+*.npz
+__pycache__/
+*.pyc
+.DS_Store
+revision/statistics/
+revision/gan/
+revision/complexity/
+

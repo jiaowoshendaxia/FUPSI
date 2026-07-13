@@ -1,0 +1,3 @@
+dataset,metric,comparison,paired_seeds,mean_fupsi,mean_urbanfm,mean_difference_fupsi_minus_urbanfm,relative_change_fupsi_vs_urbanfm_percent,paired_t_stat,paired_t_p,wilcoxon_stat,wilcoxon_p,direction_consistent
+Chicago Taxi 2024,RMSE,FUPSI vs UrbanFM,2024;2025;2026,1.6936860000,1.7160650000,-0.0223790000,-1.304088,-1.1226060664,0.3782693077,1.000000,0.500000,False
+Chicago Taxi 2024,MAE,FUPSI vs UrbanFM,2024;2025;2026,0.2205866667,0.2087563333,0.0118303333,5.667054,3.3144891424,0.0802249900,0.000000,0.250000,True

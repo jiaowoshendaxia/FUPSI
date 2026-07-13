@@ -1,0 +1,4 @@
+variant,feature_size,hidden_dim,residual_blocks,base_channels,predictor_params,generator_params,discriminator_params,inference_params,inference_params_m,inference_macs,inference_macs_g,inference_latency_ms_batch1,inference_peak_memory_mb_batch1,train_step_ms_batch8_no_discriminator,train_peak_memory_mb_batch8_no_discriminator,gpu,inference_warmup,inference_repeats,train_warmup,train_repeats
+Small,32,64,4,32,24516,169810,327594,194326,0.194326,27033600,0.027034,2.528884,139.548828,32.349930,41.185547,NVIDIA GeForce RTX 4090,20,100,3,10
+Medium,48,96,6,48,41828,456504,327594,498332,0.498332,59799552,0.059800,2.991517,149.419922,37.720279,51.801270,NVIDIA GeForce RTX 4090,20,100,3,10
+Full,64,128,8,64,63236,951454,327594,1014690,1.014690,110161920,0.110162,3.246374,152.084961,41.654224,75.106445,NVIDIA GeForce RTX 4090,20,100,3,10
