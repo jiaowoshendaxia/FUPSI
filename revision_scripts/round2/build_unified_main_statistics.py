@@ -123,6 +123,10 @@ def format_mean_std(mean: float, std: float, rank: int) -> str:
     return value
 
 
+def format_p_latex(value: float) -> str:
+    return r"$<0.0001$" if value < 0.0001 else f"${value:.4f}$"
+
+
 def validate_exact_result_matrix(rows: list[dict]) -> None:
     expected = {
         (dataset, method, seed)
@@ -276,8 +280,8 @@ def write_hrstt_statistics_latex(path: Path, paired_rows: list[dict]) -> None:
                     latex_escape(row["dataset"]),
                     row["metric"],
                     f"{float(row['mean_difference_FUPSI_minus_baseline']):.4f}",
-                    f"{float(row['paired_t_p']):.4f}",
-                    f"{float(row['wilcoxon_p']):.4f}",
+                    format_p_latex(float(row["paired_t_p"])),
+                    format_p_latex(float(row["wilcoxon_p"])),
                     dz_text,
                     f"{row['FUPSI_lower_seed_count']}/{row['n']}",
                     str(row["n"]),
