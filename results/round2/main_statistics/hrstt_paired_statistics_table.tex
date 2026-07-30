@@ -1,0 +1,23 @@
+\begin{table*}[!htbp]
+\centering
+\caption{Descriptive paired comparison with HRSTT (reimplementation). Differences are FUPSI minus HRSTT; negative values favor FUPSI. Statistical evidence is interpreted cautiously because only three paired seeds are available.}
+\label{tab:hrstt-paired-statistics}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrrrr}
+\toprule
+Dataset & Metric & Mean diff. & $t$-test $p$ & Wilcoxon $p$ & Cohen's $d_z$ & FUPSI lower & $n$ \\
+\midrule
+TaxiBJ P1 & RMSE & 61.0021 & 0.0000 & 0.2500 & 176.791 & 0/3 & 3 \\
+TaxiBJ P1 & MAE & 30.9315 & 0.0000 & 0.2500 & 104.422 & 0/3 & 3 \\
+TaxiBJ P2 & RMSE & 81.8180 & 0.0000 & 0.2500 & 2331.999 & 0/3 & 3 \\
+TaxiBJ P2 & MAE & 43.2194 & 0.0000 & 0.2500 & 994.097 & 0/3 & 3 \\
+TaxiBJ P3 & RMSE & 73.2597 & 0.0000 & 0.2500 & 529.346 & 0/3 & 3 \\
+TaxiBJ P3 & MAE & 39.3958 & 0.0000 & 0.2500 & 927.095 & 0/3 & 3 \\
+TaxiBJ P4 & RMSE & 49.9824 & 0.0000 & 0.2500 & 137.002 & 0/3 & 3 \\
+TaxiBJ P4 & MAE & 25.6950 & 0.0000 & 0.2500 & 113.765 & 0/3 & 3 \\
+BikeNYC & RMSE & -0.4063 & 0.3213 & 0.5000 & -0.755 & 2/3 & 3 \\
+BikeNYC & MAE & -0.2011 & 0.1932 & 0.2500 & -1.115 & 3/3 & 3 \\
+\bottomrule
+\end{tabular}
+\end{table*}

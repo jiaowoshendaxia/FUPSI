@@ -1,3 +1,3 @@
 baseline,datasets,mean_fupsi_params_change_percent,mean_fupsi_macs_reduction_percent,mean_fupsi_latency_reduction_percent,mean_fupsi_train_step_reduction_percent
-FODE,4,59.45,29.21,7.84,-5.00
-UrbanFM,5,-36.71,58.65,23.90,18.02
+FODE,5,63.51,26.23,8.66,-10.23
+UrbanFM,5,-36.71,58.65,24.92,8.83

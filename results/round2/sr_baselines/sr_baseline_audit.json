@@ -1,0 +1,13 @@
+{
+  "protocol": "MainSeed-RawCount-v2",
+  "expected_seed_results": 30,
+  "seed_results": 30,
+  "expected_hash_checks": 90,
+  "hash_checks": 90,
+  "all_hash_checks_exact": true,
+  "expected_coarse_metric_checks": 90,
+  "coarse_metric_checks": 90,
+  "all_coarse_metric_checks_match": true,
+  "bike_coarse_scaler": 1500,
+  "fine_scaler": 100
+}

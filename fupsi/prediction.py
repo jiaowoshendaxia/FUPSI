@@ -7,7 +7,7 @@ from einops import rearrange
 device = "cuda" if torch.cuda.is_available() else "cpu"
 class PositionalEncoding(nn.Module):
 
-    def __init__(self, d_model, max_len=5000):  # d_model = feature_size,为线性输出的维度
+    def __init__(self, d_model, max_len=5000):  # d_model is the feature width.
         super(PositionalEncoding, self).__init__()
         pe = torch.zeros(max_len, d_model)
         position = torch.arange(0, max_len, dtype=torch.float).unsqueeze(1)
@@ -28,8 +28,8 @@ class PositionalEncoding(nn.Module):
         # print(self.pe[:x.size(0), :].repeat(1,x.shape[1],1).shape ,'---',x.shape)
         # dimension 1 maybe inequal batchsize
         x = x.permute(3,0,2,1)#B,D,N,T->T,B,N,D
-        return x + self.pe[:x.size(0), :].repeat(1, x.shape[1], x.shape[2],1)  # 使batch中每个序列都添加一样的位置特征
-#一个一个输入
+        return x + self.pe[:x.size(0), :].repeat(1, x.shape[1], x.shape[2],1)
+# Process each temporal input branch independently.
 class PreNorm(nn.Module):
     def __init__(self, dim, fn):
         super().__init__()
@@ -230,7 +230,7 @@ class TransAm(nn.Module):
 
     def init_weights(self):
         initrange = 0.1
-        self.to_predict[1].bias.data.zero_() #将 m 模型的偏置项（bias）全部清零。
+        self.to_predict[1].bias.data.zero_()
         self.to_dim[1].bias.data.zero_()
         self.to_predict[1].weight.data.uniform_(-initrange, initrange)
         self.to_dim[1].weight.data.uniform_(-initrange, initrange)
@@ -285,7 +285,7 @@ class TransAm(nn.Module):
         return torch.tanh(pre)
 
     def _generate_square_subsequent_mask(self, sz):
-        mask = (torch.triu(torch.ones(sz, sz)) == 1).transpose(0, 1) #torch.triu返回矩阵上三角部分
+        mask = (torch.triu(torch.ones(sz, sz)) == 1).transpose(0, 1)
         #print('mask = {}'.format(mask))
         mask = mask.float().masked_fill(mask == 0, float('-inf')).masked_fill(mask == 1, float(0.0))
         return mask

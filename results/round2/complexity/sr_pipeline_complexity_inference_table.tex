@@ -1,0 +1,35 @@
+\begin{table*}[!htbp]
+\centering
+\small
+\caption{Same-hardware pipeline complexity under the MainSeed-RawCount-v2 protocol. MACs include both flow channels.}
+\label{tab:same-hardware-complexity}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrr}
+\toprule
+Dataset & Method & Params (M) & MACs (G) & Inference (ms) & Train step (ms) \\
+\midrule
+TaxiBJ P1 & FUPSI & 1.073 & 0.167 & 6.167 & 62.646 \\
+TaxiBJ P1 & UrbanFM & 1.652 & 0.330 & 7.642 & 65.464 \\
+TaxiBJ P1 & FODE & 0.689 & 0.217 & 6.719 & 62.006 \\
+\addlinespace
+TaxiBJ P2 & FUPSI & 1.014 & 0.106 & 3.533 & 40.812 \\
+TaxiBJ P2 & UrbanFM & 1.592 & 0.269 & 4.745 & 50.403 \\
+TaxiBJ P2 & FODE & 0.630 & 0.156 & 3.837 & 39.362 \\
+\addlinespace
+TaxiBJ P3 & FUPSI & 1.023 & 0.110 & 3.545 & 41.568 \\
+TaxiBJ P3 & UrbanFM & 1.601 & 0.272 & 4.972 & 50.313 \\
+TaxiBJ P3 & FODE & 0.639 & 0.159 & 4.038 & 36.824 \\
+\addlinespace
+TaxiBJ P4 & FUPSI & 1.015 & 0.110 & 3.688 & 41.142 \\
+TaxiBJ P4 & UrbanFM & 1.593 & 0.273 & 4.899 & 43.156 \\
+TaxiBJ P4 & FODE & 0.631 & 0.160 & 3.961 & 36.580 \\
+\addlinespace
+BikeNYC & FUPSI & 0.875 & 0.035 & 3.555 & 40.544 \\
+BikeNYC & UrbanFM & 1.453 & 0.098 & 4.825 & 40.041 \\
+BikeNYC & FODE & 0.487 & 0.041 & 3.868 & 33.479 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.96\linewidth}
+\footnotesize \textit{Note.} All measurements use the same NVIDIA RTX 4090. Inference uses batch size 1. Training-step time uses batch size 8 and includes forward propagation, backward propagation, and an Adam update for the shared predictor-plus-SR path. The optional discriminator is excluded. UrbanFM and FODE include both flow channels through their released single-channel interfaces. FLOPs (estimated as twice MACs) and peak-memory measurements are retained in the accompanying reproducibility artifact.
+\end{minipage}
+\end{table*}

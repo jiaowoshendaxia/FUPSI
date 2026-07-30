@@ -1,0 +1,18 @@
+{
+  "protocol": "MainSeed-RawCount-v2",
+  "operating_system": "AutoDL Linux container",
+  "python": "3.10.8",
+  "pytorch": "2.1.2+cu121",
+  "cuda_runtime": "12.1",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "gpu_memory_mib": 24564,
+  "numpy": "1.26.3",
+  "scipy": "1.15.3",
+  "pandas": "2.3.3",
+  "matplotlib": "3.8.2",
+  "seaborn": "0.13.2",
+  "h5py": "3.16.0",
+  "scikit_learn": "1.7.2",
+  "tqdm": "4.64.1",
+  "einops": "0.8.2"
+}

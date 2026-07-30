@@ -17,7 +17,7 @@ def get_dataloader(datapath, len_closeness,len_period,len_trend,scaler_X, scaler
 
     X = torch.FloatTensor(np.load(os.path.join(datapath, 'X.npy'))) / scaler_X
     print(X.shape)
-    # 这里 X.npy是1530个32*32的粗粒度图像，Y.npy是1530个128*128的细粒度图像
+    # X.npy stores coarse maps and Y.npy stores aligned fine maps.
     Y = torch.FloatTensor(np.expand_dims(np.load(os.path.join(datapath, 'Y.npy')),1))/ scaler_Y
 
     print(Y.shape)
@@ -52,7 +52,7 @@ def get_dataloader(datapath, len_closeness,len_period,len_trend,scaler_X, scaler
         train_pre.append(X[i + block_len-1])
         train_label.append(Y[i + block_len-1])
         if ext_flag == True:
-            train_ext.append(ext[i + block_len-1])# 1-100 1为需预测长度
+            train_ext.append(ext[i + block_len-1])  # target-time features
 
 
     np.save(os.path.join(datapath,'XC_{}.npy'.format(len_closeness)), train_xc)

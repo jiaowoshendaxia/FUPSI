@@ -1,0 +1,11 @@
+dataset,metric,best_baseline,FUPSI_mean,best_baseline_mean,absolute_gain_baseline_minus_FUPSI,relative_gain_percent,FUPSI_is_better
+BikeNYC,RMSE,FODE,5.389023,5.468658,0.079635,1.4562,true
+BikeNYC,MAE,FODE,2.618890,2.585823,-0.033067,-1.2788,false
+TaxiBJ P1,RMSE,HRSTT (reimplementation),79.743727,18.741634,-61.002093,-325.4897,false
+TaxiBJ P1,MAE,HRSTT (reimplementation),42.133345,11.201815,-30.931530,-276.1296,false
+TaxiBJ P2,RMSE,HRSTT (reimplementation),100.416654,18.598703,-81.817951,-439.9121,false
+TaxiBJ P2,MAE,HRSTT (reimplementation),54.564884,11.345497,-43.219387,-380.9387,false
+TaxiBJ P3,RMSE,HRSTT (reimplementation),91.212218,17.952545,-73.259673,-408.0740,false
+TaxiBJ P3,MAE,HRSTT (reimplementation),50.229260,10.833494,-39.395766,-363.6478,false
+TaxiBJ P4,RMSE,HRSTT (reimplementation),68.764298,18.781849,-49.982449,-266.1210,false
+TaxiBJ P4,MAE,HRSTT (reimplementation),36.284239,10.589203,-25.695036,-242.6532,false

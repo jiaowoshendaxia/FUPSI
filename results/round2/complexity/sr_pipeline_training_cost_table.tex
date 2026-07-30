@@ -1,0 +1,34 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Standardized training-step cost for the predictor-plus-SR path under the MainSeed protocol.}
+\label{tab:sr_pipeline_training_cost}
+\begin{tabular}{llrr}
+\toprule
+Dataset & Method & Step time (ms) & Peak memory (MB) \\
+\midrule
+TaxiBJ P1 & FUPSI & 62.646 & 209.0 \\
+TaxiBJ P1 & UrbanFM & 65.464 & 217.9 \\
+TaxiBJ P1 & FODE & 62.006 & 203.3 \\
+\addlinespace
+TaxiBJ P2 & FUPSI & 40.812 & 169.3 \\
+TaxiBJ P2 & UrbanFM & 50.403 & 178.3 \\
+TaxiBJ P2 & FODE & 39.362 & 161.8 \\
+\addlinespace
+TaxiBJ P3 & FUPSI & 41.568 & 73.9 \\
+TaxiBJ P3 & UrbanFM & 50.313 & 84.4 \\
+TaxiBJ P3 & FODE & 36.824 & 60.7 \\
+\addlinespace
+TaxiBJ P4 & FUPSI & 41.142 & 74.8 \\
+TaxiBJ P4 & UrbanFM & 43.156 & 85.3 \\
+TaxiBJ P4 & FODE & 36.580 & 61.6 \\
+\addlinespace
+BikeNYC & FUPSI & 40.544 & 164.5 \\
+BikeNYC & UrbanFM & 40.041 & 171.2 \\
+BikeNYC & FODE & 33.479 & 159.0 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.90\linewidth}
+\footnotesize \textit{Note.} Times use batch size 8 and include forward, backward, and Adam update. The discriminator is excluded to keep the predictor-plus-SR path comparable across methods; its parameters are reported separately in the FUPSI module table.
+\end{minipage}
+\end{table}

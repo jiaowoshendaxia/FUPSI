@@ -1,0 +1,35 @@
+{
+  "protocol": "MainSeed-RawCount-v2",
+  "dataset": "TaxiBJ P4",
+  "seed": 2024,
+  "selection_rule": "test sample whose corrected FUPSI per-sample RMSE is nearest the median corrected FUPSI per-sample RMSE",
+  "sample_index": 354,
+  "median_fupsi_sample_RMSE": 51.470458984375,
+  "selected_fupsi_sample_RMSE": 51.466156005859375,
+  "selected_inverse_sample_RMSE": 86.84687805175781,
+  "target_max_abs_difference": 0.0,
+  "source_files": {
+    "fupsi_prediction": {
+      "path": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P4/seed2024/0.01_0.1/-4-6/8-64-300_330_2_1/Generator/test_fine.npy",
+      "sha256": "8c93768ad89b771914d146d315bf49acb216e760a3603a1c6cc75dcd05330533"
+    },
+    "fupsi_target": {
+      "path": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P4/seed2024/0.01_0.1/-4-6/8-64-300_330_2_1/Generator/true_fine.npy",
+      "sha256": "7571b9d5feaf263db0a1eff2fab8bd997f61f8f402d3c0eb39e315c71ad0cae0"
+    },
+    "inverse_prediction": {
+      "path": "revision/round2/inverse_order/TaxiBJ_P4/seed2024/test_fine_prediction.npy",
+      "sha256": "6a5610fbae16076f11539f35f2eaf6aad26a0d7399ae8b6e797c4cec96541735"
+    },
+    "inverse_target": {
+      "path": "revision/round2/inverse_order/TaxiBJ_P4/seed2024/test_fine_target.npy",
+      "sha256": "7571b9d5feaf263db0a1eff2fab8bd997f61f8f402d3c0eb39e315c71ad0cae0"
+    }
+  },
+  "outputs": {
+    "png": "TaxiBJ_P4_order_comparison.png",
+    "png_sha256": "ddefe8a2a167d4be0832eee7bf48e47edfec50131a6b9dce15a3f2d1a3de1081",
+    "pdf": "TaxiBJ_P4_order_comparison.pdf",
+    "pdf_sha256": "5bae8a43d822381b36010db2fdbd1f709d03fd5c470fb4ced3efe17ee5ae4556"
+  }
+}

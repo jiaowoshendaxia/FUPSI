@@ -1,0 +1,151 @@
+dataset,missing_rate,completion,completion_method,model_seed,mask_seed,fine_RMSE,fine_MAE,completion_MSE
+TaxiBJ P1,0.0,adaptive,no_completion,2024,2024,79.76175,42.192547,0.0
+TaxiBJ P1,0.0,no_completion,no_completion,2024,2024,79.76175,42.192547,0.0
+TaxiBJ P1,0.1,adaptive,linear_interpolation,2024,2024,79.806218,42.304934,90190.132812
+TaxiBJ P1,0.1,no_completion,no_completion,2024,2024,83.959138,46.410274,4422338.5
+TaxiBJ P1,0.3,adaptive,linear_interpolation,2024,2024,80.017081,42.739645,143879.078125
+TaxiBJ P1,0.3,no_completion,no_completion,2024,2024,97.375441,55.794244,4524998.0
+TaxiBJ P1,0.5,adaptive,linear_interpolation,2024,2024,80.563108,43.7718,294757.78125
+TaxiBJ P1,0.5,no_completion,no_completion,2024,2024,112.021196,64.952193,4575626.0
+TaxiBJ P1,0.7,adaptive,linear_interpolation,2024,2024,82.512373,46.51793,731704.0625
+TaxiBJ P1,0.7,no_completion,no_completion,2024,2024,125.128918,73.602141,4561278.5
+TaxiBJ P1,0.0,adaptive,no_completion,2025,2025,79.724275,42.065824,0.0
+TaxiBJ P1,0.0,no_completion,no_completion,2025,2025,79.724275,42.065824,0.0
+TaxiBJ P1,0.1,adaptive,linear_interpolation,2025,2025,79.76034,42.178221,91879.5
+TaxiBJ P1,0.1,no_completion,no_completion,2025,2025,84.018069,46.113951,4530559.5
+TaxiBJ P1,0.3,adaptive,linear_interpolation,2025,2025,80.040775,42.712675,150406.3125
+TaxiBJ P1,0.3,no_completion,no_completion,2025,2025,96.56607,54.813658,4493712.0
+TaxiBJ P1,0.5,adaptive,linear_interpolation,2025,2025,80.636183,43.814178,294586.25
+TaxiBJ P1,0.5,no_completion,no_completion,2025,2025,111.783532,64.584231,4541693.5
+TaxiBJ P1,0.7,adaptive,linear_interpolation,2025,2025,82.981902,47.10677,712180.8125
+TaxiBJ P1,0.7,no_completion,no_completion,2025,2025,125.609058,73.493926,4536653.5
+TaxiBJ P1,0.0,adaptive,no_completion,2026,2026,79.745125,42.141673,0.0
+TaxiBJ P1,0.0,no_completion,no_completion,2026,2026,79.745125,42.141673,0.0
+TaxiBJ P1,0.1,adaptive,linear_interpolation,2026,2026,79.809603,42.286542,115204.054688
+TaxiBJ P1,0.1,no_completion,no_completion,2026,2026,83.964295,46.03689,4539816.0
+TaxiBJ P1,0.3,adaptive,linear_interpolation,2026,2026,80.059326,42.764742,151553.90625
+TaxiBJ P1,0.3,no_completion,no_completion,2026,2026,96.069986,54.512751,4570398.5
+TaxiBJ P1,0.5,adaptive,linear_interpolation,2026,2026,80.713422,43.846023,292047.4375
+TaxiBJ P1,0.5,no_completion,no_completion,2026,2026,109.910647,63.534081,4594496.5
+TaxiBJ P1,0.7,adaptive,linear_interpolation,2026,2026,83.002826,46.712902,693831.25
+TaxiBJ P1,0.7,no_completion,no_completion,2026,2026,124.028402,72.841805,4570471.5
+TaxiBJ P2,0.0,adaptive,no_completion,2024,2024,100.398451,54.549738,0.0
+TaxiBJ P2,0.0,no_completion,no_completion,2024,2024,100.398451,54.549738,0.0
+TaxiBJ P2,0.1,adaptive,linear_interpolation,2024,2024,100.489392,54.718011,106602.085938
+TaxiBJ P2,0.1,no_completion,no_completion,2024,2024,104.634503,59.397613,5878660.0
+TaxiBJ P2,0.3,adaptive,linear_interpolation,2024,2024,100.811064,55.288406,179579.9375
+TaxiBJ P2,0.3,no_completion,no_completion,2024,2024,116.412402,68.629459,5899790.5
+TaxiBJ P2,0.5,adaptive,linear_interpolation,2024,2024,101.653313,56.523002,327915.125
+TaxiBJ P2,0.5,no_completion,no_completion,2024,2024,128.078288,76.330375,5954155.0
+TaxiBJ P2,0.7,adaptive,linear_interpolation,2024,2024,103.511781,59.447091,757554.4375
+TaxiBJ P2,0.7,no_completion,no_completion,2024,2024,139.467703,83.546598,5940617.0
+TaxiBJ P2,0.0,adaptive,no_completion,2025,2025,100.42985,54.566712,0.0
+TaxiBJ P2,0.0,no_completion,no_completion,2025,2025,100.42985,54.566712,0.0
+TaxiBJ P2,0.1,adaptive,linear_interpolation,2025,2025,100.542145,54.789665,112619.773438
+TaxiBJ P2,0.1,no_completion,no_completion,2025,2025,105.648461,59.898928,5984447.0
+TaxiBJ P2,0.3,adaptive,linear_interpolation,2025,2025,100.99092,55.56944,184468.1875
+TaxiBJ P2,0.3,no_completion,no_completion,2025,2025,118.089624,68.723347,5901389.0
+TaxiBJ P2,0.5,adaptive,linear_interpolation,2025,2025,101.877202,56.983704,303783.28125
+TaxiBJ P2,0.5,no_completion,no_completion,2025,2025,129.871713,76.044583,5952606.5
+TaxiBJ P2,0.7,adaptive,linear_interpolation,2025,2025,104.855697,60.725667,791268.125
+TaxiBJ P2,0.7,no_completion,no_completion,2025,2025,139.919425,82.040654,5939008.0
+TaxiBJ P2,0.0,adaptive,no_completion,2026,2026,100.42168,54.57815,0.0
+TaxiBJ P2,0.0,no_completion,no_completion,2026,2026,100.42168,54.57815,0.0
+TaxiBJ P2,0.1,adaptive,linear_interpolation,2026,2026,100.513922,54.747151,106526.304688
+TaxiBJ P2,0.1,no_completion,no_completion,2026,2026,103.592346,58.757677,5939913.0
+TaxiBJ P2,0.3,adaptive,linear_interpolation,2026,2026,100.854064,55.400254,165447.46875
+TaxiBJ P2,0.3,no_completion,no_completion,2026,2026,112.629468,66.295418,5907559.0
+TaxiBJ P2,0.5,adaptive,linear_interpolation,2026,2026,101.768424,56.725582,338285.75
+TaxiBJ P2,0.5,no_completion,no_completion,2026,2026,126.020567,74.784794,5977476.0
+TaxiBJ P2,0.7,adaptive,linear_interpolation,2026,2026,103.829847,59.860249,909205.75
+TaxiBJ P2,0.7,no_completion,no_completion,2026,2026,141.552654,84.06839,5964222.5
+TaxiBJ P3,0.0,adaptive,no_completion,2024,2024,91.195099,50.257304,0.0
+TaxiBJ P3,0.0,no_completion,no_completion,2024,2024,91.195099,50.257304,0.0
+TaxiBJ P3,0.1,adaptive,linear_interpolation,2024,2024,91.274084,50.4139,87320.796875
+TaxiBJ P3,0.1,no_completion,no_completion,2024,2024,95.058455,54.18905,5191891.5
+TaxiBJ P3,0.3,adaptive,linear_interpolation,2024,2024,91.523272,50.96817,150477.890625
+TaxiBJ P3,0.3,no_completion,no_completion,2024,2024,106.337056,62.152876,5241421.5
+TaxiBJ P3,0.5,adaptive,linear_interpolation,2024,2024,92.152536,52.027771,273196.21875
+TaxiBJ P3,0.5,no_completion,no_completion,2024,2024,118.420984,69.831402,5279594.0
+TaxiBJ P3,0.7,adaptive,linear_interpolation,2024,2024,94.562863,55.13291,682225.375
+TaxiBJ P3,0.7,no_completion,no_completion,2024,2024,131.467189,78.362228,5275377.0
+TaxiBJ P3,0.0,adaptive,no_completion,2025,2025,91.204954,50.18979,0.0
+TaxiBJ P3,0.0,no_completion,no_completion,2025,2025,91.204954,50.18979,0.0
+TaxiBJ P3,0.1,adaptive,linear_interpolation,2025,2025,91.26264,50.325443,92317.148438
+TaxiBJ P3,0.1,no_completion,no_completion,2025,2025,94.259261,53.800002,5281679.0
+TaxiBJ P3,0.3,adaptive,linear_interpolation,2025,2025,91.505248,50.861313,146661.78125
+TaxiBJ P3,0.3,no_completion,no_completion,2025,2025,102.817889,60.805102,5255482.0
+TaxiBJ P3,0.5,adaptive,linear_interpolation,2025,2025,92.069323,51.889163,281002.1875
+TaxiBJ P3,0.5,no_completion,no_completion,2025,2025,114.625761,68.818347,5296688.0
+TaxiBJ P3,0.7,adaptive,linear_interpolation,2025,2025,94.048487,54.602365,696662.75
+TaxiBJ P3,0.7,no_completion,no_completion,2025,2025,130.473232,78.856291,5286080.0
+TaxiBJ P3,0.0,adaptive,no_completion,2026,2026,91.236517,50.24064,0.0
+TaxiBJ P3,0.0,no_completion,no_completion,2026,2026,91.236517,50.24064,0.0
+TaxiBJ P3,0.1,adaptive,linear_interpolation,2026,2026,91.296679,50.386388,89768.867188
+TaxiBJ P3,0.1,no_completion,no_completion,2026,2026,94.128818,53.512717,5252635.5
+TaxiBJ P3,0.3,adaptive,linear_interpolation,2026,2026,91.546863,50.879544,149602.65625
+TaxiBJ P3,0.3,no_completion,no_completion,2026,2026,103.062256,60.586898,5250920.5
+TaxiBJ P3,0.5,adaptive,linear_interpolation,2026,2026,92.184433,51.982378,291184.375
+TaxiBJ P3,0.5,no_completion,no_completion,2026,2026,115.219437,68.720741,5295700.5
+TaxiBJ P3,0.7,adaptive,linear_interpolation,2026,2026,93.999951,54.675133,739598.0625
+TaxiBJ P3,0.7,no_completion,no_completion,2026,2026,130.350335,78.490683,5293434.0
+TaxiBJ P4,0.0,adaptive,no_completion,2024,2024,68.82208,36.323846,0.0
+TaxiBJ P4,0.0,no_completion,no_completion,2024,2024,68.82208,36.323846,0.0
+TaxiBJ P4,0.1,adaptive,linear_interpolation,2024,2024,68.920373,36.485244,101592.460938
+TaxiBJ P4,0.1,no_completion,no_completion,2024,2024,74.01324,41.353997,3786476.25
+TaxiBJ P4,0.3,adaptive,linear_interpolation,2024,2024,69.259067,37.056062,157254.984375
+TaxiBJ P4,0.3,no_completion,no_completion,2024,2024,90.947537,52.469795,3811713.5
+TaxiBJ P4,0.5,adaptive,linear_interpolation,2024,2024,70.164263,38.298677,382708.5
+TaxiBJ P4,0.5,no_completion,no_completion,2024,2024,105.553306,61.367825,3810006.5
+TaxiBJ P4,0.7,adaptive,linear_interpolation,2024,2024,72.587628,41.164909,721424.5625
+TaxiBJ P4,0.7,no_completion,no_completion,2024,2024,117.148461,68.37997,3829923.75
+TaxiBJ P4,0.0,adaptive,no_completion,2025,2025,68.76654,36.307355,0.0
+TaxiBJ P4,0.0,no_completion,no_completion,2025,2025,68.76654,36.307355,0.0
+TaxiBJ P4,0.1,adaptive,linear_interpolation,2025,2025,68.935173,36.537137,106421.101562
+TaxiBJ P4,0.1,no_completion,no_completion,2025,2025,72.652454,40.915136,3847901.0
+TaxiBJ P4,0.3,adaptive,linear_interpolation,2025,2025,69.38434,37.21805,177759.09375
+TaxiBJ P4,0.3,no_completion,no_completion,2025,2025,81.943081,48.139095,3811626.0
+TaxiBJ P4,0.5,adaptive,linear_interpolation,2025,2025,70.280592,38.576719,327793.15625
+TaxiBJ P4,0.5,no_completion,no_completion,2025,2025,93.325989,55.244847,3837753.75
+TaxiBJ P4,0.7,adaptive,linear_interpolation,2025,2025,72.765416,41.821277,2636544.0
+TaxiBJ P4,0.7,no_completion,no_completion,2025,2025,106.469723,62.671717,3822988.25
+TaxiBJ P4,0.0,adaptive,no_completion,2026,2026,68.704234,36.221327,0.0
+TaxiBJ P4,0.0,no_completion,no_completion,2026,2026,68.704234,36.221327,0.0
+TaxiBJ P4,0.1,adaptive,linear_interpolation,2026,2026,68.854504,36.434107,112999.90625
+TaxiBJ P4,0.1,no_completion,no_completion,2026,2026,73.026137,40.836061,3808226.25
+TaxiBJ P4,0.3,adaptive,linear_interpolation,2026,2026,69.276186,37.103664,174469.140625
+TaxiBJ P4,0.3,no_completion,no_completion,2026,2026,84.679683,49.160444,3846572.25
+TaxiBJ P4,0.5,adaptive,linear_interpolation,2026,2026,70.263916,38.463154,292715.84375
+TaxiBJ P4,0.5,no_completion,no_completion,2026,2026,96.102867,56.116621,3837651.25
+TaxiBJ P4,0.7,adaptive,linear_interpolation,2026,2026,72.781126,41.388192,634295.5
+TaxiBJ P4,0.7,no_completion,no_completion,2026,2026,107.302769,62.972536,3829792.25
+BikeNYC,0.0,adaptive,no_completion,2024,2024,5.372016,2.664818,0.0
+BikeNYC,0.0,no_completion,no_completion,2024,2024,5.372016,2.664818,0.0
+BikeNYC,0.1,adaptive,linear_interpolation,2024,2024,6.107664,2.981852,1377.545166
+BikeNYC,0.1,no_completion,no_completion,2024,2024,8.779051,3.937051,6419.544434
+BikeNYC,0.3,adaptive,linear_interpolation,2024,2024,8.142835,3.862545,2144.053223
+BikeNYC,0.3,no_completion,no_completion,2024,2024,12.327653,5.403602,6283.690918
+BikeNYC,0.5,adaptive,mean_fill,2024,2024,11.525665,5.742832,2650.750244
+BikeNYC,0.5,no_completion,no_completion,2024,2024,14.535205,6.391296,6354.05957
+BikeNYC,0.7,adaptive,mean_fill,2024,2024,13.01298,6.550658,2697.947998
+BikeNYC,0.7,no_completion,no_completion,2024,2024,16.64245,7.363748,6322.862793
+BikeNYC,0.0,adaptive,no_completion,2025,2025,5.414302,2.59738,0.0
+BikeNYC,0.0,no_completion,no_completion,2025,2025,5.414302,2.59738,0.0
+BikeNYC,0.1,adaptive,linear_interpolation,2025,2025,6.266365,2.932927,1635.986328
+BikeNYC,0.1,no_completion,no_completion,2025,2025,9.000144,3.89117,6840.325195
+BikeNYC,0.3,adaptive,linear_interpolation,2025,2025,8.51819,3.855166,2489.416504
+BikeNYC,0.3,no_completion,no_completion,2025,2025,12.331843,5.323766,6327.473633
+BikeNYC,0.5,adaptive,mean_fill,2025,2025,11.766533,5.68629,2667.92334
+BikeNYC,0.5,no_completion,no_completion,2025,2025,14.594143,6.38523,6257.419922
+BikeNYC,0.7,adaptive,mean_fill,2025,2025,13.053494,6.37495,2655.20874
+BikeNYC,0.7,no_completion,no_completion,2025,2025,16.733121,7.338145,6235.42041
+BikeNYC,0.0,adaptive,no_completion,2026,2026,5.380805,2.594449,0.0
+BikeNYC,0.0,no_completion,no_completion,2026,2026,5.380805,2.594449,0.0
+BikeNYC,0.1,adaptive,linear_interpolation,2026,2026,6.215942,2.918268,1591.139526
+BikeNYC,0.1,no_completion,no_completion,2026,2026,8.754044,3.847927,6168.03418
+BikeNYC,0.3,adaptive,linear_interpolation,2026,2026,8.385534,3.838799,2476.365234
+BikeNYC,0.3,no_completion,no_completion,2026,2026,12.517262,5.441951,6223.790039
+BikeNYC,0.5,adaptive,mean_fill,2026,2026,11.757438,5.692986,2625.565918
+BikeNYC,0.5,no_completion,no_completion,2026,2026,15.043199,6.549428,6188.755859
+BikeNYC,0.7,adaptive,mean_fill,2026,2026,13.101016,6.454518,2648.175293
+BikeNYC,0.7,no_completion,no_completion,2026,2026,17.179031,7.49348,6213.933594

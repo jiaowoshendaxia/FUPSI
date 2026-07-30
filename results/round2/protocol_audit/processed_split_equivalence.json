@@ -1,0 +1,14 @@
+{
+  "protocol": "MainSeed-RawCount-v2",
+  "reference_prefix": "MainSeed",
+  "candidate_prefix": "ResidualMainE300P5",
+  "audit_rows": 45,
+  "all_shapes_match": true,
+  "all_dtypes_match": true,
+  "all_sha256_match": true,
+  "split_policy": "chronological 72/8/20",
+  "scalers": {
+    "coarse": 1500,
+    "fine": 100
+  }
+}

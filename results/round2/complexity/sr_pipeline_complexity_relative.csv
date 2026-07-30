@@ -1,0 +1,11 @@
+dataset,baseline,fupsi_params_change_vs_baseline_percent,fupsi_macs_reduction_vs_baseline_percent,fupsi_latency_reduction_vs_baseline_percent,fupsi_train_step_reduction_vs_baseline_percent
+TaxiBJ P1,UrbanFM,-35.01,49.37,19.30,4.31
+TaxiBJ P1,FODE,55.73,22.88,8.21,-1.03
+TaxiBJ P2,UrbanFM,-36.31,60.50,25.54,19.03
+TaxiBJ P2,FODE,60.97,31.79,7.92,-3.68
+TaxiBJ P3,UrbanFM,-36.12,59.77,28.70,17.38
+TaxiBJ P3,FODE,60.16,31.14,12.20,-12.88
+TaxiBJ P4,UrbanFM,-36.30,59.64,24.72,4.67
+TaxiBJ P4,FODE,60.92,31.02,6.89,-12.47
+BikeNYC,UrbanFM,-39.79,63.95,26.33,-1.26
+BikeNYC,FODE,79.75,14.34,8.10,-21.10

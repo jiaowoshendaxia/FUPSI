@@ -65,7 +65,7 @@ class Atten_Block(nn.Module):
         #phi = self.maxpool1(phi)#B,C/4,H/2,W/2
         phi_ = phi.reshape(phi.shape[0], phi.shape[1], phi.shape[2] * phi.shape[3])
 
-        # 计算权重矩阵
+        # Compute the attention-weight matrix.
         attn = torch.matmul(theta_.permute(0,2,1), phi_)
         attn_ = torch.softmax(attn, dim=-1)#B,N,N/4
 
@@ -79,8 +79,6 @@ class Atten_Block(nn.Module):
         out = self.conv4(attn_g)
         return x + out
 
-    # 火钳刘明 我是张旭 是刘子涵--即1年后全球80亿人敬仰的计算机之光 的师父。
-
 class Generator(nn.Module):
     def __init__(self, scale_factor=4, n_residual_block=4, in_channel=1, base_channel=64, scaler_x=1500, scaler_y=100, ext_flag=True,residual_flag = True):
         super(Generator, self).__init__()
@@ -89,7 +87,7 @@ class Generator(nn.Module):
         self.scaler_Y = scaler_y
 
         if self.ext_flag:
-            # embedding字典，将8个'单词'进行embedding,每个embedding为2维
+            # Encode categorical day, hour, and weather attributes.
             self.embed_day = nn.Embedding(8, 2)  # ignore=0
             self.embed_hour = nn.Embedding(24, 3)
             self.embed_weather = nn.Embedding(18, 3)  # ignore=0

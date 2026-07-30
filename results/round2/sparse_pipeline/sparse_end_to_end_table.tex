@@ -1,0 +1,44 @@
+\begin{table*}[!htbp]
+\centering
+\caption{End-to-end sparse-input evaluation under the unified MainSeed-RawCount-v2 protocol. Results are mean $\pm$ standard deviation over three matched model/mask seeds; lower is better.}
+\label{tab:sparse-end-to-end}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llcccc}
+\toprule
+Dataset & Missing & No completion & Adaptive & No completion & Adaptive \\
+ & rate & RMSE & RMSE & MAE & MAE \\
+\midrule
+TaxiBJ P1 & 0\% & $79.744\pm0.019$ & $79.744\pm0.019$ & $42.133\pm0.064$ & $42.133\pm0.064$ \\
+TaxiBJ P1 & 10\% & $83.981\pm0.033$ & $79.792\pm0.028$ & $46.187\pm0.197$ & $42.257\pm0.068$ \\
+TaxiBJ P1 & 30\% & $96.670\pm0.659$ & $80.039\pm0.021$ & $55.040\pm0.670$ & $42.739\pm0.026$ \\
+TaxiBJ P1 & 50\% & $111.238\pm1.156$ & $80.638\pm0.075$ & $64.357\pm0.736$ & $43.811\pm0.037$ \\
+TaxiBJ P1 & 70\% & $124.922\pm0.810$ & $82.832\pm0.277$ & $73.313\pm0.411$ & $46.779\pm0.300$ \\
+\addlinespace
+TaxiBJ P2 & 0\% & $100.417\pm0.016$ & $100.417\pm0.016$ & $54.565\pm0.014$ & $54.565\pm0.014$ \\
+TaxiBJ P2 & 10\% & $104.625\pm1.028$ & $100.515\pm0.026$ & $59.351\pm0.572$ & $54.752\pm0.036$ \\
+TaxiBJ P2 & 30\% & $115.710\pm2.797$ & $100.885\pm0.094$ & $67.883\pm1.375$ & $55.419\pm0.141$ \\
+TaxiBJ P2 & 50\% & $127.990\pm1.927$ & $101.766\pm0.112$ & $75.720\pm0.822$ & $56.744\pm0.231$ \\
+TaxiBJ P2 & 70\% & $140.313\pm1.097$ & $104.066\pm0.702$ & $83.219\pm1.053$ & $60.011\pm0.652$ \\
+\addlinespace
+TaxiBJ P3 & 0\% & $91.212\pm0.022$ & $91.212\pm0.022$ & $50.229\pm0.035$ & $50.229\pm0.035$ \\
+TaxiBJ P3 & 10\% & $94.482\pm0.503$ & $91.278\pm0.017$ & $53.834\pm0.339$ & $50.375\pm0.045$ \\
+TaxiBJ P3 & 30\% & $104.072\pm1.965$ & $91.525\pm0.021$ & $61.182\pm0.848$ & $50.903\pm0.057$ \\
+TaxiBJ P3 & 50\% & $116.089\pm2.041$ & $92.135\pm0.059$ & $69.123\pm0.615$ & $51.966\pm0.071$ \\
+TaxiBJ P3 & 70\% & $130.764\pm0.612$ & $94.204\pm0.312$ & $78.570\pm0.256$ & $54.803\pm0.288$ \\
+\addlinespace
+TaxiBJ P4 & 0\% & $68.764\pm0.059$ & $68.764\pm0.059$ & $36.284\pm0.055$ & $36.284\pm0.055$ \\
+TaxiBJ P4 & 10\% & $73.231\pm0.703$ & $68.903\pm0.043$ & $41.035\pm0.279$ & $36.485\pm0.052$ \\
+TaxiBJ P4 & 30\% & $85.857\pm4.616$ & $69.307\pm0.068$ & $49.923\pm2.264$ & $37.126\pm0.083$ \\
+TaxiBJ P4 & 50\% & $98.327\pm6.410$ & $70.236\pm0.063$ & $57.576\pm3.312$ & $38.446\pm0.140$ \\
+TaxiBJ P4 & 70\% & $110.307\pm5.940$ & $72.711\pm0.107$ & $64.675\pm3.212$ & $41.458\pm0.334$ \\
+\addlinespace
+BikeNYC & 0\% & $5.389\pm0.022$ & $5.389\pm0.022$ & $2.619\pm0.040$ & $2.619\pm0.040$ \\
+BikeNYC & 10\% & $8.844\pm0.135$ & $6.197\pm0.081$ & $3.892\pm0.045$ & $2.944\pm0.033$ \\
+BikeNYC & 30\% & $12.392\pm0.108$ & $8.349\pm0.190$ & $5.390\pm0.060$ & $3.852\pm0.012$ \\
+BikeNYC & 50\% & $14.724\pm0.278$ & $11.683\pm0.137$ & $6.442\pm0.093$ & $5.707\pm0.031$ \\
+BikeNYC & 70\% & $16.852\pm0.287$ & $13.056\pm0.044$ & $7.398\pm0.083$ & $6.460\pm0.088$ \\
+\bottomrule
+\end{tabular}
+\parbox{\textwidth}{\footnotesize\textit{Note.} Completion is causal: no operator uses an observation after the time being filled. Final RMSE/MAE are computed on raw-count future fine-grained maps. Completion MSE, the validation-fixed operator selected for each setting, and all seed-level values are provided in the accompanying result artifact. Statistical tests are descriptive because only three matched seeds are available.}
+\end{table*}

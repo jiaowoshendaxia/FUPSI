@@ -1,0 +1,16 @@
+dataset,method,seed,RMSE,MAE,protocol,source,test_samples,history_offset
+TaxiBJ P1,HA-Mean,2024,114.094515,70.087967,MainSeed-RawCount-v2,deterministic within-day training-slot mean,738,240
+TaxiBJ P1,HA-Mean,2025,114.094515,70.087967,MainSeed-RawCount-v2,deterministic within-day training-slot mean,738,240
+TaxiBJ P1,HA-Mean,2026,114.094515,70.087967,MainSeed-RawCount-v2,deterministic within-day training-slot mean,738,240
+TaxiBJ P2,HA-Mean,2024,84.536039,50.279314,MainSeed-RawCount-v2,deterministic within-day training-slot mean,908,48
+TaxiBJ P2,HA-Mean,2025,84.536039,50.279314,MainSeed-RawCount-v2,deterministic within-day training-slot mean,908,48
+TaxiBJ P2,HA-Mean,2026,84.536039,50.279314,MainSeed-RawCount-v2,deterministic within-day training-slot mean,908,48
+TaxiBJ P3,HA-Mean,2024,96.276563,56.021964,MainSeed-RawCount-v2,deterministic within-day training-slot mean,1024,96
+TaxiBJ P3,HA-Mean,2025,96.276563,56.021964,MainSeed-RawCount-v2,deterministic within-day training-slot mean,1024,96
+TaxiBJ P3,HA-Mean,2026,96.276563,56.021964,MainSeed-RawCount-v2,deterministic within-day training-slot mean,1024,96
+TaxiBJ P4,HA-Mean,2024,73.533308,43.278283,MainSeed-RawCount-v2,deterministic within-day training-slot mean,1300,144
+TaxiBJ P4,HA-Mean,2025,73.533308,43.278283,MainSeed-RawCount-v2,deterministic within-day training-slot mean,1300,144
+TaxiBJ P4,HA-Mean,2026,73.533308,43.278283,MainSeed-RawCount-v2,deterministic within-day training-slot mean,1300,144
+BikeNYC,HA-Mean,2024,21.593739,11.433754,MainSeed-RawCount-v2,deterministic within-day training-slot mean,759,120
+BikeNYC,HA-Mean,2025,21.593739,11.433754,MainSeed-RawCount-v2,deterministic within-day training-slot mean,759,120
+BikeNYC,HA-Mean,2026,21.593739,11.433754,MainSeed-RawCount-v2,deterministic within-day training-slot mean,759,120

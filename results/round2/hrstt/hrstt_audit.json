@@ -1,0 +1,24 @@
+{
+  "protocol": "MainSeed-RawCount-v2",
+  "method": "HRSTT (reimplementation)",
+  "official_code_used": false,
+  "expected_seed_results": 15,
+  "seed_results": 15,
+  "datasets": [
+    "TaxiBJ P1",
+    "TaxiBJ P2",
+    "TaxiBJ P3",
+    "TaxiBJ P4",
+    "BikeNYC"
+  ],
+  "seeds": [
+    2024,
+    2025,
+    2026
+  ],
+  "normalization": {
+    "coarse_divisor": 1500,
+    "fine_divisor": 100,
+    "metrics": "raw counts after inverse scaling"
+  }
+}

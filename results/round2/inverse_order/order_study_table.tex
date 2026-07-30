@@ -1,0 +1,16 @@
+\begin{table}[htb]
+\centering
+\caption{Prediction-before-super-resolution order study on TaxiBJ P4. Results are mean $\pm$ standard deviation over three matched seeds; lower is better.}
+\label{tab:order-study}
+\small
+\begin{tabular}{lcc}
+\toprule
+Order & RMSE & MAE \\
+\midrule
+Prediction before SR & $68.7643\pm0.0590$ & $36.2842\pm0.0551$ \\
+SR before prediction & $98.2026\pm0.0047$ & $43.1936\pm0.0683$ \\
+\bottomrule
+\end{tabular}
+\vspace{2pt}
+\parbox{\linewidth}{\footnotesize\textit{Note.} Paired tests and effect sizes are reported in the accompanying seed-level evidence. With only three seeds, they are treated as descriptive rather than definitive evidence.}
+\end{table}

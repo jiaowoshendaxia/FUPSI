@@ -1,6 +1,6 @@
 # -- coding:utf-8 --
-#经过预训练后，对预测微调,加入了低分辨率真实值的超分
-#预测和超分都没有外部因素
+# Pretrain the predictor and then optimize prediction and super-resolution.
+# Formal MainSeed experiments disable external factors.
 import argparse
 import csv
 import os
@@ -42,11 +42,11 @@ def parse_bool(value):
     raise argparse.ArgumentTypeError(f"Invalid boolean value: {value}")
 
 
-parser = argparse.ArgumentParser(description='Train Super Resolution Models')
-parser.add_argument('--upscale_factor', type=int, default=2, help='upscale factor',choices=(2,4))
+parser = argparse.ArgumentParser(description='Train residual-enabled FUPSI')
+parser.add_argument('--upscale_factor', type=int, default=4, help='upscale factor',choices=(2,4))
 parser.add_argument('--num_epochs', default=300, type=int, help='train epoch number')
-parser.add_argument('--dataset', type=str, default='P6', help='which dataset to use')
-# 1500 和 100:根据统计数据后粗细粒度每个格子大概的信号容量制定
+parser.add_argument('--dataset', type=str, default='MainSeed_TaxiBJ_P4', help='processed dataset alias')
+# Fixed coarse/fine scaling constants for MainSeed-RawCount-v2.
 parser.add_argument('--scaler_X', type=int, default=1500, help='scaler of coarse-grained flows')
 parser.add_argument('--scaler_Y', type=int, default=100, help='scaler of fine-grained flows')
 parser.add_argument('--batch_size', type=int, default=32, help='training batch size')
@@ -72,9 +72,9 @@ parser.add_argument('--hidden_dim', type=int, default=128,
 parser.add_argument('--skip_dim', type=int, default=128,
                     help='dim of skip conv',choices=(128,256))
 parser.add_argument('--nb_flow', type=int, default=2,choices=(1,2))
-parser.add_argument('--map_height', type=int, default=40)
-parser.add_argument('--map_width', type=int, default=16)
-parser.add_argument('--day_len',type=int,default=24,choices=(24,48))
+parser.add_argument('--map_height', type=int, default=8)
+parser.add_argument('--map_width', type=int, default=8)
+parser.add_argument('--day_len',type=int,default=48,choices=(24,48))
 # training skills
 parser.add_argument('--lr', type=float, default=1e-4, help='adam: learning rate of prediction in pretrain')
 parser.add_argument('--lamda_s', type=float, default=0.1, help='weight of loss between high from prediction_out and high truth')
@@ -88,9 +88,50 @@ parser.add_argument('--real_label_smoothing', type=float, default=0.1, help='one
 parser.add_argument('--b1', type=float, default=0.9, help='adam: decay of first order momentum of gradient')
 parser.add_argument('--b2', type=float, default=0.999, help='adam: decay of second order momentum of gradient')
 parser.add_argument('--harved_epoch', type=int, default=20, help='halved at every x interval')
-parser.add_argument('--seed', type=int, default=2025, help='random seed')
+parser.add_argument('--seed', type=int, default=2024, help='random seed')
 parser.add_argument('--train_pre_flag', type=parse_bool, default=False, help='whether to pretrain pre')
 opt = parser.parse_args()
+
+
+FORMAL_DATASET_CONFIGS = {
+    "TaxiBJ_P1": (4, 8, 8, 48, 2),
+    "TaxiBJ_P2": (4, 8, 8, 48, 2),
+    "TaxiBJ_P3": (4, 8, 8, 48, 2),
+    "TaxiBJ_P4": (4, 8, 8, 48, 2),
+    "BikeNYC": (2, 8, 4, 24, 2),
+}
+
+
+def validate_formal_configuration():
+    matched = next(
+        (
+            values
+            for dataset_suffix, values in FORMAL_DATASET_CONFIGS.items()
+            if opt.dataset.endswith(dataset_suffix)
+        ),
+        None,
+    )
+    if matched is None:
+        return
+    expected = dict(
+        zip(
+            ("upscale_factor", "map_height", "map_width", "day_len", "nb_flow"),
+            matched,
+        )
+    )
+    mismatches = [
+        f"{name}={getattr(opt, name)} (expected {value})"
+        for name, value in expected.items()
+        if getattr(opt, name) != value
+    ]
+    if mismatches:
+        parser.error(
+            f"{opt.dataset} is inconsistent with MainSeed-RawCount-v2: "
+            + "; ".join(mismatches)
+        )
+
+
+validate_formal_configuration()
 print(opt)
 
 def get_RMSE(pred, real):
@@ -98,7 +139,7 @@ def get_RMSE(pred, real):
     return sqrt(mse)
 
 def train_pre(lr,epoch_num):
-    # 设置神经网络参数随机初始化种子，使每次训练初始参数可控
+    # Fix all model-initialization random seeds.
     torch.manual_seed(opt.seed)
     np.random.seed(opt.seed)
     if torch.cuda.is_available():
@@ -130,17 +171,17 @@ def train_pre(lr,epoch_num):
 
     criterion = nn.MSELoss()
     if torch.cuda.is_available():
-        print("CUDA可用，正在用GPU运行程序")
+        print("CUDA is available; training on GPU.")
         pre.cuda()
         criterion.cuda()
 
     optimizer = optim.Adam(pre.parameters(), lr=lr, betas=(opt.b1, opt.b2))
     iter = 0
     for epoch in range(epoch_num):
-        pre.train()  # model.train()：启用Batch_Normalization和Dropout
+        pre.train()
         train_loss = 0
         ep_time = datetime.now()
-        """生成样本数据"""
+        """Run one pretraining epoch."""
         for z, (xc,xp,xt,ext,next) in enumerate(train_dataloader):
 
             optimizer.zero_grad()
@@ -155,7 +196,7 @@ def train_pre(lr,epoch_num):
             pred = pre(xc,xp,xt,ext)
             loss = criterion(pred, next.reshape(B,-1,H,W))
             loss.requires_grad_(True)
-            # 更新网络参数
+            # Update model parameters.
             loss.backward()
             optimizer.step()
             print("[Epoch %d/%d] [Batch %d/%d] [Batch Loss: %f]" % (epoch,
@@ -184,7 +225,7 @@ def train_pre(lr,epoch_num):
                             ext = ext.cuda()
                         Bv, Tv, _, H, W = xc.shape
                         pred = pre(xc, xp, xt, ext).cpu()
-                        # 计算和预期输出之间的MSE损失
+                        # Evaluate validation MSE.
                         los = criterion(pred, next.reshape(Bv, -1, H, W))
                         total_mse += los * Bv
                     rmse = np.sqrt(total_mse / len(valid_dataloader.dataset)) * opt.scaler_X
@@ -282,7 +323,7 @@ def train(lr_pre,lr_sr):
     # netS = Generator(scale_factor=UPSCALE_FACTOR, n_residual_block=opt.n_residuals, base_channel=opt.base_channels,
     #                  scaler_x=opt.scaler_X, scaler_y=opt.scaler_Y, ext_flag=opt.ext_flag)
 
-    print('# generator parameters:', sum(param.numel() for param in netS.parameters()))  # param.numel()：返回param中元素的数量
+    print('# generator parameters:', sum(param.numel() for param in netS.parameters()))
     netD = Discriminator(in_channel=opt.nb_flow,ext_flag=False)
     # netD = Discriminator(ext_flag=opt.ext_flag)
     print('# discriminator parameters:', sum(param.numel() for param in netD.parameters()))
@@ -291,7 +332,7 @@ def train(lr_pre,lr_sr):
     criterion = nn.MSELoss()
     criterion_adv = nn.BCELoss()
     if torch.cuda.is_available():
-        print("CUDA可用，正在用GPU运行程序")
+        print("CUDA is available; training on GPU.")
         netP.cuda()
         netS.cuda()
         netD.cuda()
@@ -323,14 +364,13 @@ def train(lr_pre,lr_sr):
         if use_adversarial:
             netD.train()
         out_path = '{}/valid_results/epoch{}_{}'.format(g_save_path,epoch, opt.num_epochs + 1)
-        # 存储中间预测结果和loss
+        # Track intermediate predictions and losses.
         if not os.path.exists(out_path):
             os.makedirs(out_path)
 
         for xc, xp, xt, ext,pre, target in train_bar:
         # for xc, xp, xt, pre, target in train_bar:
-            # data： batch_size个低分辨率图像
-            # target：batch_size个对应高分辨率原图
+            # Each batch contains aligned coarse and fine flow maps.
             batch_size ,Tc,_,H,W =  xc.shape
             pre = pre.reshape(batch_size,-1,H,W)
             #print("batch size = {}".format(batch_size))
@@ -356,7 +396,7 @@ def train(lr_pre,lr_sr):
             out_p = netP(xc,xp,xt,ext)
             # out_p = netP(xc, xp, xt)
 
-            fake_img= netS(out_p,ext)#预测进入生成器
+            fake_img = netS(out_p, ext)
             loss_pre = criterion(out_p, pre)
 
             update_discriminator = use_adversarial and global_step % opt.d_update_interval == 0

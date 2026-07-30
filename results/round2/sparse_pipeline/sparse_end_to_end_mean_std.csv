@@ -1,0 +1,151 @@
+dataset,missing_rate,completion,metric,runs,mean,std
+TaxiBJ P1,0.0,adaptive,completion_MSE,3,0.000000,0.000000
+TaxiBJ P1,0.0,adaptive,fine_MAE,3,42.133348,0.063770
+TaxiBJ P1,0.0,adaptive,fine_RMSE,3,79.743717,0.018777
+TaxiBJ P1,0.0,no_completion,completion_MSE,3,0.000000,0.000000
+TaxiBJ P1,0.0,no_completion,fine_MAE,3,42.133348,0.063770
+TaxiBJ P1,0.0,no_completion,fine_RMSE,3,79.743717,0.018777
+TaxiBJ P1,0.1,adaptive,completion_MSE,3,99091.229167,13979.658439
+TaxiBJ P1,0.1,adaptive,fine_MAE,3,42.256566,0.068469
+TaxiBJ P1,0.1,adaptive,fine_RMSE,3,79.792054,0.027517
+TaxiBJ P1,0.1,no_completion,completion_MSE,3,4497571.333333,65317.724291
+TaxiBJ P1,0.1,no_completion,fine_MAE,3,46.187038,0.197130
+TaxiBJ P1,0.1,no_completion,fine_RMSE,3,83.980501,0.032637
+TaxiBJ P1,0.3,adaptive,completion_MSE,3,148613.098958,4139.741271
+TaxiBJ P1,0.3,adaptive,fine_MAE,3,42.739021,0.026039
+TaxiBJ P1,0.3,adaptive,fine_RMSE,3,80.039061,0.021175
+TaxiBJ P1,0.3,no_completion,completion_MSE,3,4529702.833333,38559.128791
+TaxiBJ P1,0.3,no_completion,fine_MAE,3,55.040218,0.670114
+TaxiBJ P1,0.3,no_completion,fine_RMSE,3,96.670499,0.658963
+TaxiBJ P1,0.5,adaptive,completion_MSE,3,293797.156250,1517.726102
+TaxiBJ P1,0.5,adaptive,fine_MAE,3,43.810667,0.037236
+TaxiBJ P1,0.5,adaptive,fine_RMSE,3,80.637571,0.075167
+TaxiBJ P1,0.5,no_completion,completion_MSE,3,4570605.333333,26757.139656
+TaxiBJ P1,0.5,no_completion,fine_MAE,3,64.356835,0.735895
+TaxiBJ P1,0.5,no_completion,fine_RMSE,3,111.238458,1.156042
+TaxiBJ P1,0.7,adaptive,completion_MSE,3,712572.041667,18939.437079
+TaxiBJ P1,0.7,adaptive,fine_MAE,3,46.779201,0.299966
+TaxiBJ P1,0.7,adaptive,fine_RMSE,3,82.832367,0.277320
+TaxiBJ P1,0.7,no_completion,completion_MSE,3,4556134.500000,17485.989620
+TaxiBJ P1,0.7,no_completion,fine_MAE,3,73.312624,0.411316
+TaxiBJ P1,0.7,no_completion,fine_RMSE,3,124.922126,0.810364
+TaxiBJ P2,0.0,adaptive,completion_MSE,3,0.000000,0.000000
+TaxiBJ P2,0.0,adaptive,fine_MAE,3,54.564867,0.014296
+TaxiBJ P2,0.0,adaptive,fine_RMSE,3,100.416660,0.016290
+TaxiBJ P2,0.0,no_completion,completion_MSE,3,0.000000,0.000000
+TaxiBJ P2,0.0,no_completion,fine_MAE,3,54.564867,0.014296
+TaxiBJ P2,0.0,no_completion,fine_RMSE,3,100.416660,0.016290
+TaxiBJ P2,0.1,adaptive,completion_MSE,3,108582.721355,3496.394978
+TaxiBJ P2,0.1,adaptive,fine_MAE,3,54.751609,0.036034
+TaxiBJ P2,0.1,adaptive,fine_RMSE,3,100.515153,0.026398
+TaxiBJ P2,0.1,no_completion,completion_MSE,3,5934340.000000,53113.238359
+TaxiBJ P2,0.1,no_completion,fine_MAE,3,59.351406,0.572027
+TaxiBJ P2,0.1,no_completion,fine_RMSE,3,104.625103,1.028090
+TaxiBJ P2,0.3,adaptive,completion_MSE,3,176498.531250,9877.663378
+TaxiBJ P2,0.3,adaptive,fine_MAE,3,55.419367,0.141489
+TaxiBJ P2,0.3,adaptive,fine_RMSE,3,100.885349,0.093921
+TaxiBJ P2,0.3,no_completion,completion_MSE,3,5902912.833333,4102.310213
+TaxiBJ P2,0.3,no_completion,fine_MAE,3,67.882741,1.375464
+TaxiBJ P2,0.3,no_completion,fine_RMSE,3,115.710498,2.796932
+TaxiBJ P2,0.5,adaptive,completion_MSE,3,323328.052083,17702.712106
+TaxiBJ P2,0.5,adaptive,fine_MAE,3,56.744096,0.230908
+TaxiBJ P2,0.5,adaptive,fine_RMSE,3,101.766313,0.111959
+TaxiBJ P2,0.5,no_completion,completion_MSE,3,5961412.500000,13932.928165
+TaxiBJ P2,0.5,no_completion,fine_MAE,3,75.719917,0.822351
+TaxiBJ P2,0.5,no_completion,fine_RMSE,3,127.990189,1.927084
+TaxiBJ P2,0.7,adaptive,completion_MSE,3,819342.770833,79628.320651
+TaxiBJ P2,0.7,adaptive,fine_MAE,3,60.011002,0.652483
+TaxiBJ P2,0.7,adaptive,fine_RMSE,3,104.065775,0.702335
+TaxiBJ P2,0.7,no_completion,completion_MSE,3,5947949.166667,14116.063672
+TaxiBJ P2,0.7,no_completion,fine_MAE,3,83.218547,1.052920
+TaxiBJ P2,0.7,no_completion,fine_RMSE,3,140.313261,1.096852
+TaxiBJ P3,0.0,adaptive,completion_MSE,3,0.000000,0.000000
+TaxiBJ P3,0.0,adaptive,fine_MAE,3,50.229245,0.035170
+TaxiBJ P3,0.0,adaptive,fine_RMSE,3,91.212190,0.021636
+TaxiBJ P3,0.0,no_completion,completion_MSE,3,0.000000,0.000000
+TaxiBJ P3,0.0,no_completion,fine_MAE,3,50.229245,0.035170
+TaxiBJ P3,0.0,no_completion,fine_RMSE,3,91.212190,0.021636
+TaxiBJ P3,0.1,adaptive,completion_MSE,3,89802.270834,2498.343269
+TaxiBJ P3,0.1,adaptive,fine_MAE,3,50.375244,0.045269
+TaxiBJ P3,0.1,adaptive,fine_RMSE,3,91.277801,0.017321
+TaxiBJ P3,0.1,no_completion,completion_MSE,3,5242068.666667,45816.942981
+TaxiBJ P3,0.1,no_completion,fine_MAE,3,53.833923,0.339440
+TaxiBJ P3,0.1,no_completion,fine_RMSE,3,94.482178,0.503314
+TaxiBJ P3,0.3,adaptive,completion_MSE,3,148914.109375,1999.061102
+TaxiBJ P3,0.3,adaptive,fine_MAE,3,50.903009,0.057163
+TaxiBJ P3,0.3,adaptive,fine_RMSE,3,91.525128,0.020869
+TaxiBJ P3,0.3,no_completion,completion_MSE,3,5249274.666667,7173.283110
+TaxiBJ P3,0.3,no_completion,fine_MAE,3,61.181625,0.848174
+TaxiBJ P3,0.3,no_completion,fine_RMSE,3,104.072400,1.965052
+TaxiBJ P3,0.5,adaptive,completion_MSE,3,281794.260417,9020.198221
+TaxiBJ P3,0.5,adaptive,fine_MAE,3,51.966437,0.070666
+TaxiBJ P3,0.5,adaptive,fine_RMSE,3,92.135431,0.059431
+TaxiBJ P3,0.5,no_completion,completion_MSE,3,5290660.833333,9596.868712
+TaxiBJ P3,0.5,no_completion,fine_MAE,3,69.123497,0.615003
+TaxiBJ P3,0.5,no_completion,fine_RMSE,3,116.088727,2.041489
+TaxiBJ P3,0.7,adaptive,completion_MSE,3,706162.062500,29842.654393
+TaxiBJ P3,0.7,adaptive,fine_MAE,3,54.803469,0.287615
+TaxiBJ P3,0.7,adaptive,fine_RMSE,3,94.203767,0.311932
+TaxiBJ P3,0.7,no_completion,completion_MSE,3,5284963.666667,9080.113564
+TaxiBJ P3,0.7,no_completion,fine_MAE,3,78.569734,0.256342
+TaxiBJ P3,0.7,no_completion,fine_RMSE,3,130.763585,0.612429
+TaxiBJ P4,0.0,adaptive,completion_MSE,3,0.000000,0.000000
+TaxiBJ P4,0.0,adaptive,fine_MAE,3,36.284176,0.055050
+TaxiBJ P4,0.0,adaptive,fine_RMSE,3,68.764285,0.058955
+TaxiBJ P4,0.0,no_completion,completion_MSE,3,0.000000,0.000000
+TaxiBJ P4,0.0,no_completion,fine_MAE,3,36.284176,0.055050
+TaxiBJ P4,0.0,no_completion,fine_RMSE,3,68.764285,0.058955
+TaxiBJ P4,0.1,adaptive,completion_MSE,3,107004.489583,5726.055215
+TaxiBJ P4,0.1,adaptive,fine_MAE,3,36.485496,0.051515
+TaxiBJ P4,0.1,adaptive,fine_RMSE,3,68.903350,0.042944
+TaxiBJ P4,0.1,no_completion,completion_MSE,3,3814201.166667,31145.219537
+TaxiBJ P4,0.1,no_completion,fine_MAE,3,41.035065,0.279019
+TaxiBJ P4,0.1,no_completion,fine_RMSE,3,73.230610,0.703059
+TaxiBJ P4,0.3,adaptive,completion_MSE,3,169827.739583,11011.883492
+TaxiBJ P4,0.3,adaptive,fine_MAE,3,37.125925,0.083257
+TaxiBJ P4,0.3,adaptive,fine_RMSE,3,69.306531,0.067926
+TaxiBJ P4,0.3,no_completion,completion_MSE,3,3823303.916667,20151.015263
+TaxiBJ P4,0.3,no_completion,fine_MAE,3,49.923111,2.263843
+TaxiBJ P4,0.3,no_completion,fine_RMSE,3,85.856767,4.616189
+TaxiBJ P4,0.5,adaptive,completion_MSE,3,334405.833333,45359.289769
+TaxiBJ P4,0.5,adaptive,fine_MAE,3,38.446183,0.139796
+TaxiBJ P4,0.5,adaptive,fine_RMSE,3,70.236257,0.062904
+TaxiBJ P4,0.5,no_completion,completion_MSE,3,3828470.500000,15990.375185
+TaxiBJ P4,0.5,no_completion,fine_MAE,3,57.576431,3.312250
+TaxiBJ P4,0.5,no_completion,fine_RMSE,3,98.327387,6.410007
+TaxiBJ P4,0.7,adaptive,completion_MSE,3,1330754.687500,1131685.541510
+TaxiBJ P4,0.7,adaptive,fine_MAE,3,41.458126,0.333726
+TaxiBJ P4,0.7,adaptive,fine_RMSE,3,72.711390,0.107468
+TaxiBJ P4,0.7,no_completion,completion_MSE,3,3827568.083333,3966.796955
+TaxiBJ P4,0.7,no_completion,fine_MAE,3,64.674741,3.212346
+TaxiBJ P4,0.7,no_completion,fine_RMSE,3,110.306984,5.939515
+BikeNYC,0.0,adaptive,completion_MSE,3,0.000000,0.000000
+BikeNYC,0.0,adaptive,fine_MAE,3,2.618882,0.039808
+BikeNYC,0.0,adaptive,fine_RMSE,3,5.389041,0.022314
+BikeNYC,0.0,no_completion,completion_MSE,3,0.000000,0.000000
+BikeNYC,0.0,no_completion,fine_MAE,3,2.618882,0.039808
+BikeNYC,0.0,no_completion,fine_RMSE,3,5.389041,0.022314
+BikeNYC,0.1,adaptive,completion_MSE,3,1534.890340,138.097562
+BikeNYC,0.1,adaptive,fine_MAE,3,2.944349,0.033295
+BikeNYC,0.1,adaptive,fine_RMSE,3,6.196657,0.081089
+BikeNYC,0.1,no_completion,completion_MSE,3,6475.967936,339.678541
+BikeNYC,0.1,no_completion,fine_MAE,3,3.892049,0.044569
+BikeNYC,0.1,no_completion,fine_RMSE,3,8.844413,0.135445
+BikeNYC,0.3,adaptive,completion_MSE,3,2369.944987,195.736815
+BikeNYC,0.3,adaptive,fine_MAE,3,3.852170,0.012153
+BikeNYC,0.3,adaptive,fine_RMSE,3,8.348853,0.190347
+BikeNYC,0.3,no_completion,completion_MSE,3,6278.318197,52.050183
+BikeNYC,0.3,no_completion,fine_MAE,3,5.389773,0.060294
+BikeNYC,0.3,no_completion,fine_RMSE,3,12.392253,0.108282
+BikeNYC,0.5,adaptive,completion_MSE,3,2648.079834,21.304603
+BikeNYC,0.5,adaptive,fine_MAE,3,5.707369,0.030894
+BikeNYC,0.5,adaptive,fine_RMSE,3,11.683212,0.136515
+BikeNYC,0.5,no_completion,completion_MSE,3,6266.745117,83.045461
+BikeNYC,0.5,no_completion,fine_MAE,3,6.441985,0.093098
+BikeNYC,0.5,no_completion,fine_RMSE,3,14.724182,0.277844
+BikeNYC,0.7,adaptive,completion_MSE,3,2667.110677,26.936455
+BikeNYC,0.7,adaptive,fine_MAE,3,6.460042,0.087984
+BikeNYC,0.7,adaptive,fine_RMSE,3,13.055830,0.044064
+BikeNYC,0.7,no_completion,completion_MSE,3,6257.405599,57.696655
+BikeNYC,0.7,no_completion,fine_MAE,3,7.398458,0.083282
+BikeNYC,0.7,no_completion,fine_RMSE,3,16.851534,0.287221

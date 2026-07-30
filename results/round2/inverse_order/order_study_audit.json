@@ -1,0 +1,21 @@
+{
+  "protocol": "MainSeed-RawCount-v2",
+  "dataset": "TaxiBJ P4",
+  "methods": [
+    "FUPSI (prediction before SR)",
+    "Inverse order (SR before prediction)"
+  ],
+  "seeds": [
+    2024,
+    2025,
+    2026
+  ],
+  "expected_inverse_runs": 3,
+  "inverse_runs": 3,
+  "normalization": {
+    "coarse_divisor": 1500,
+    "fine_divisor": 100,
+    "metrics": "raw counts after inverse scaling"
+  },
+  "statistical_interpretation": "descriptive; n=3 has low power"
+}

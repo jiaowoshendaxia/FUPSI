@@ -50,7 +50,7 @@ def get_dataloader_pre(datapath, len_closeness,len_period,len_trend,scaler_X,bat
             train_xt[i,j]=X[i + block_len - (len_trend-j)*day_len*7 - 1]
         train_pre.append(X[i + block_len-1])
         if ext_flag == True:
-            train_ext.append(ext[i + block_len-1])# 1-100 1为需预测长度
+            train_ext.append(ext[i + block_len-1])  # target-time features
 
     np.save(os.path.join(datapath,'XC_{}.npy'.format(len_closeness)), train_xc)
     xc = torch.FloatTensor(np.load(os.path.join(datapath, 'XC_{}.npy'.format(len_closeness))))

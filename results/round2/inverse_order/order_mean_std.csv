@@ -1,0 +1,5 @@
+dataset,method,metric,runs,mean,std
+TaxiBJ P4,FUPSI,RMSE,3,68.764298,0.058967
+TaxiBJ P4,Inverse order,RMSE,3,98.202639,0.004724
+TaxiBJ P4,FUPSI,MAE,3,36.284239,0.055073
+TaxiBJ P4,Inverse order,MAE,3,43.193626,0.068259

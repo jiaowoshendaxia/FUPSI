@@ -1,0 +1,11 @@
+dataset,metric,n,mean_difference_noGAN_minus_GAN,paired_t_p,wilcoxon_p,cohen_dz,noGAN_lower_seed_count,interpretation
+TaxiBJ P1,RMSE,3,-0.164491,0.030253,0.250000,-3.243570,3,descriptive; n=3 has low power
+TaxiBJ P1,MAE,3,-0.522057,0.001263,0.250000,-16.227779,3,descriptive; n=3 has low power
+TaxiBJ P2,RMSE,3,-0.184215,0.048942,0.250000,-2.512972,3,descriptive; n=3 has low power
+TaxiBJ P2,MAE,3,-0.475207,0.028872,0.250000,-3.323782,3,descriptive; n=3 has low power
+TaxiBJ P3,RMSE,3,-0.205322,0.025253,0.250000,-3.564006,3,descriptive; n=3 has low power
+TaxiBJ P3,MAE,3,-0.538457,0.010113,0.250000,-5.697621,3,descriptive; n=3 has low power
+TaxiBJ P4,RMSE,3,-0.183708,0.001560,0.250000,-14.598834,3,descriptive; n=3 has low power
+TaxiBJ P4,MAE,3,-0.436725,0.002184,0.250000,-12.333858,3,descriptive; n=3 has low power
+BikeNYC,RMSE,3,-0.664679,0.001208,0.250000,-16.598214,3,descriptive; n=3 has low power
+BikeNYC,MAE,3,-0.415413,0.001285,0.250000,-16.091301,3,descriptive; n=3 has low power

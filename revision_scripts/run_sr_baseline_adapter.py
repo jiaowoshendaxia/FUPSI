@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import importlib
 import math
 import os
@@ -28,7 +29,7 @@ from torch.utils.data import DataLoader, TensorDataset
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_CODE_ROOT = ROOT / "fupsi"
+DEFAULT_CODE_ROOT = ROOT / "fupsi" if (ROOT / "fupsi").exists() else ROOT
 DEFAULT_CUFAR_ROOT = ROOT / "revision" / "external_baselines" / "CUFAR"
 DEFAULT_OUT = ROOT / "revision" / "baseline" / "sr_adapter_results"
 
@@ -61,7 +62,7 @@ DATASETS: dict[str, DatasetConfig] = {
     "MainSeed_TaxiBJ_P2": DatasetConfig("TaxiBJ P2", "MainSeed_TaxiBJ_P2", 4, 8, 8, 3, 1, 0, 48, 1500, 100, "0.9", "0.1", 8, 64, 1, 2, 1),
     "MainSeed_TaxiBJ_P3": DatasetConfig("TaxiBJ P3", "MainSeed_TaxiBJ_P3", 4, 8, 8, 3, 2, 0, 48, 1500, 100, "0.01", "0.1", 8, 64, 2, 4, 1),
     "MainSeed_TaxiBJ_P4": DatasetConfig("TaxiBJ P4", "MainSeed_TaxiBJ_P4", 4, 8, 8, 3, 3, 0, 48, 1500, 100, "0.01", "0.1", 8, 64, 3, 2, 1),
-    "MainSeed_BikeNYC": DatasetConfig("BikeNYC", "MainSeed_BikeNYC", 2, 8, 4, 3, 5, 0, 24, 100, 100, "0.9", "0.1", 8, 64, 5, 4, 1),
+    "MainSeed_BikeNYC": DatasetConfig("BikeNYC", "MainSeed_BikeNYC", 2, 8, 4, 3, 5, 0, 24, 1500, 100, "0.9", "0.1", 8, 64, 5, 4, 1),
     "MainSeed_ChicagoTaxi2024": DatasetConfig(
         "Chicago Taxi 2024",
         "MainSeed_ChicagoTaxi2024",
@@ -299,9 +300,47 @@ def write_csv(path: Path, rows: list[dict[str, Any]], fieldnames: list[str]) -> 
         writer.writerows(rows)
 
 
+def file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def evaluation_source_hashes(generator_dir: Path) -> dict[str, str]:
+    paths = {
+        "test_coarse_sha256": generator_dir / "test_coarse.npy",
+        "true_coarse_sha256": generator_dir / "true_coarse.npy",
+        "true_fine_sha256": generator_dir / "true_fine.npy",
+    }
+    missing = [str(path) for path in paths.values() if not path.exists()]
+    if missing:
+        raise FileNotFoundError(f"Missing shared evaluation arrays: {missing}")
+    return {name: file_sha256(path) for name, path in paths.items()}
+
+
 def run_one(args: argparse.Namespace, cfg: DatasetConfig, seed: int, model_name: str) -> dict[str, Any]:
     set_seed(seed)
     device = torch.device("cuda" if torch.cuda.is_available() and not args.cpu else "cpu")
+    run_dir = (
+        args.output_dir
+        / model_name
+        / cfg.alias
+        / f"seed{seed}"
+        / f"epochs{args.epochs}"
+    )
+    metrics_path = run_dir / "test_metrics.csv"
+    if args.skip_existing and metrics_path.exists():
+        with metrics_path.open(encoding="utf-8-sig", newline="") as handle:
+            rows = list(csv.DictReader(handle))
+        if len(rows) != 1:
+            raise ValueError(
+                f"Expected one existing metrics row in {metrics_path}, "
+                f"received {len(rows)}"
+            )
+        print(f"Skipping completed run: {metrics_path}", flush=True)
+        return rows[0]
     fupsi_alias = (
         f"{args.fupsi_namespace}_{cfg.alias.removeprefix('MainSeed_')}"
         if args.fupsi_namespace
@@ -320,7 +359,6 @@ def run_one(args: argparse.Namespace, cfg: DatasetConfig, seed: int, model_name:
         model.load_state_dict(state["model_state_dict"])
         pred_fine = predict_test(model, test_coarse, cfg, args.batch_size, device)
         metrics = metric_values(pred_fine, true_fine, test_coarse, true_coarse)
-        run_dir = args.output_dir / model_name / cfg.alias / f"seed{seed}" / f"epochs{args.epochs}"
         run_dir.mkdir(parents=True, exist_ok=True)
         metrics_row = {
             "dataset": cfg.paper_name,
@@ -334,6 +372,7 @@ def run_one(args: argparse.Namespace, cfg: DatasetConfig, seed: int, model_name:
             "fupsi_generator_dir": str(gen_dir),
             "checkpoint": str(best_path),
             "run_dir": str(run_dir),
+            **evaluation_source_hashes(gen_dir),
         }
         np.save(run_dir / "pred_fine.npy", pred_fine)
         write_csv(run_dir / "test_metrics.csv", [metrics_row], list(metrics_row.keys()))
@@ -351,7 +390,6 @@ def run_one(args: argparse.Namespace, cfg: DatasetConfig, seed: int, model_name:
     model = build_model(args.cufar_root, model_name, cfg, args.base_channels).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, betas=(0.9, 0.999))
 
-    run_dir = args.output_dir / model_name / cfg.alias / f"seed{seed}" / f"epochs{args.epochs}"
     run_dir.mkdir(parents=True, exist_ok=True)
     log_path = run_dir / "train_log.csv"
     best_path = run_dir / "best_model.pt"
@@ -411,6 +449,7 @@ def run_one(args: argparse.Namespace, cfg: DatasetConfig, seed: int, model_name:
         "best_valid_mse": f"{best_val:.8f}",
         "fupsi_generator_dir": str(gen_dir),
         "run_dir": str(run_dir),
+        **evaluation_source_hashes(gen_dir),
     }
     write_csv(run_dir / "test_metrics.csv", [metrics_row], list(metrics_row.keys()))
     return metrics_row
@@ -433,6 +472,11 @@ def main() -> None:
     parser.add_argument("--eval-only", action="store_true")
     parser.add_argument("--checkpoint-root", type=Path, default=DEFAULT_OUT)
     parser.add_argument("--fupsi-namespace", default="")
+    parser.add_argument(
+        "--skip-existing",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+    )
     parser.add_argument("--cpu", action="store_true")
     args = parser.parse_args()
 
@@ -451,7 +495,8 @@ def main() -> None:
             for seed in seeds:
                 rows.append(run_one(args, cfg, seed, model_name))
 
-    combined_path = args.output_dir / "sr_adapter_metrics_latest.csv"
+    run_tag = "_".join(datasets + models + [str(seed) for seed in seeds])
+    combined_path = args.output_dir / f"sr_adapter_metrics_{run_tag}.csv"
     if rows:
         write_csv(combined_path, rows, list(rows[0].keys()))
     print(f"Wrote {combined_path}")

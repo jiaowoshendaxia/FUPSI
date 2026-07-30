@@ -1,15 +1,26 @@
 # Result Evidence Index
 
-The `results/` directory contains anonymous, machine-readable summaries used by the revised manuscript. These files are included for direct table auditing; the accompanying scripts regenerate the same summaries from seed-level outputs.
+The `results/` directory contains anonymous, machine-readable summaries used
+by the revised manuscript. Superseded first-round main, completion-only,
+fairness, and complexity outputs are intentionally excluded so that every
+principal comparison follows the single `MainSeed-RawCount-v2` protocol.
 
 | Evidence | Directory | Contents |
 |---|---|---|
-| Regenerated primary results | `results/main/` | Three-seed FUPSI summaries, aligned UrbanFM/FODE comparisons, paired tests, and sanitized seed-level metrics |
-| Capacity analysis | `results/capacity/` | Small/Medium/Full accuracy, paired tests, parameter counts, MACs, latency, and memory |
-| Efficiency analysis | `results/complexity/` | Same-hardware FUPSI/UrbanFM/FODE pipeline measurements and relative summaries |
-| Third-city study | `results/chicago/` | Chicago Taxi mean and standard deviation, paired tests, and sanitized seed-level metrics |
-| Missing completion | `results/missing/` | Validation-selected adaptive completion versus the best test baseline |
-| Baseline fairness | `results/fairness/` | Unified-task adaptation and validation protocol |
-| GAN stability | `results/gan/` | Fifteen GAN and fifteen noGAN seed metrics, paired tests, 300-epoch histories, stability curves, and the implementation audit |
+| Capacity analysis | `results/capacity/` | Corrected Small/Medium/Full accuracy and complexity evidence |
+| Third-city study | `results/chicago/` | Corrected Chicago Taxi summaries and paired comparisons |
+| GAN stability | `results/gan/` | Corrected GAN/noGAN seed metrics, paired tests, histories, and curves |
+| Protocol audit | `results/round2/protocol_audit/` | All 45 processed dataset/split/file shape, dtype, and SHA-256 checks |
+| Corrected FUPSI and HA | `results/round2/` | Fifteen corrected FUPSI rows, deterministic HA rows, and source hashes |
+| End-to-end sparse-input study | `results/round2/sparse_pipeline/` | Exactly 150 causal pipeline evaluations, mean/std summaries, paired tests, and the paper table |
+| HRSTT comparison | `results/round2/hrstt/` | Fifteen seed-level results for the documented HRSTT reimplementation |
+| Order study | `results/round2/inverse_order/` | Corrected three-seed TaxiBJ P4 order statistics |
+| SR fairness audit | `results/round2/sr_baselines/` | Thirty fresh UrbanFM/FODE rows, 90 shared-array hashes, and 90 shared coarse-metric checks |
+| Unified statistics | `results/round2/main_statistics/` | Seventy-five seed rows, 50 mean/std rows, 40 paired tests, and paper tables |
+| Same-hardware complexity | `results/round2/complexity/` | Fifteen RTX 4090 method-dataset profiles |
+| Corrected visualization | `results/round2/visualization/` | P4 order figure and source-hash metadata |
 
-MAPE remains available in seed-level evidence but is not used for primary conclusions because zero and near-zero targets make percentage errors unstable. With only three paired seeds, statistical tests are treated as descriptive evidence.
+MAPE remains available in seed-level evidence but is not used for primary
+conclusions because zero and near-zero targets make percentage errors unstable.
+With only three paired seeds, statistical tests are treated as descriptive
+evidence.

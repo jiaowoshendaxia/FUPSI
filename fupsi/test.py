@@ -1,5 +1,5 @@
 # -- coding:utf-8 --
-#经过预训练后，对预测微调,加入了低分辨率真实值的超分
+# Evaluate the jointly trained prediction and super-resolution pipeline.
 
 import os
 import numpy as np
@@ -27,22 +27,22 @@ def parse_bool(value):
 device = "cuda" if torch.cuda.is_available() else "cpu"
 # load arguments
 parser = argparse.ArgumentParser()
-parser.add_argument('--upscale_factor', type=int, default=2, help='upscale factor')
+parser.add_argument('--upscale_factor', type=int, default=4, help='upscale factor')
 parser.add_argument('--num_epochs', default=300, type=int, help='train epoch number')
-# 1500 和 100:根据统计数据后粗细粒度每个格子大概的信号容量制定
+# Fixed coarse/fine scaling constants for MainSeed-RawCount-v2.
 parser.add_argument('--scaler_X', type=int, default=1500, help='scaler of coarse-grained flows')
 parser.add_argument('--scaler_Y', type=int, default=100, help='scaler of fine-grained flows')
 parser.add_argument('--n_residuals', type=int, default=8, help='number of residual units')
 parser.add_argument('--base_channels', type=int, default=64, help='number of feature maps')
 parser.add_argument('--batch_size', type=int, default=32,
                     help='training batch size')
-parser.add_argument('--dataset', type=str, default='P6',
+parser.add_argument('--dataset', type=str, default='MainSeed_TaxiBJ_P4',
                     help='which dataset to use')
 parser.add_argument('--ext_flag', type=parse_bool, default=False, help='whether to use external factors')
 #prediction
 parser.add_argument('--nb_flow', type=int, default=2)
-parser.add_argument('--map_height', type=int, default=40)
-parser.add_argument('--map_width', type=int, default=16)
+parser.add_argument('--map_height', type=int, default=8)
+parser.add_argument('--map_width', type=int, default=8)
 parser.add_argument('--len_closeness', type=int, default=3)
 parser.add_argument('--len_period', type=int, default=5)
 parser.add_argument('--len_trend', type=int, default=0)
@@ -60,8 +60,8 @@ parser.add_argument('--hidden_dim', type=int, default=128,
                     help='dim of FC layer')
 parser.add_argument('--skip_dim', type=int, default=128,
                     help='dim of skip conv')
-parser.add_argument('--day_len',type=int,default=24,choices=(24,48))
-parser.add_argument('--seed', type=int, default=2025, help='random seed')
+parser.add_argument('--day_len',type=int,default=48,choices=(24,48))
+parser.add_argument('--seed', type=int, default=2024, help='random seed')
 
 parser.add_argument('--test_pre_flag', type=parse_bool, default=False, help='whether to pretrain pre')
 parser.add_argument('--lamda_s', type=float, default=0.1, help='weight of loss between high from prediction_out and high truth')
@@ -71,12 +71,53 @@ parser.add_argument('--lr_sr', type=float, default=1e-4, help='adam: learning ra
 
 
 opt = parser.parse_args()
+
+
+FORMAL_DATASET_CONFIGS = {
+    "TaxiBJ_P1": (4, 8, 8, 48, 2),
+    "TaxiBJ_P2": (4, 8, 8, 48, 2),
+    "TaxiBJ_P3": (4, 8, 8, 48, 2),
+    "TaxiBJ_P4": (4, 8, 8, 48, 2),
+    "BikeNYC": (2, 8, 4, 24, 2),
+}
+
+
+def validate_formal_configuration():
+    matched = next(
+        (
+            values
+            for dataset_suffix, values in FORMAL_DATASET_CONFIGS.items()
+            if opt.dataset.endswith(dataset_suffix)
+        ),
+        None,
+    )
+    if matched is None:
+        return
+    expected = dict(
+        zip(
+            ("upscale_factor", "map_height", "map_width", "day_len", "nb_flow"),
+            matched,
+        )
+    )
+    mismatches = [
+        f"{name}={getattr(opt, name)} (expected {value})"
+        for name, value in expected.items()
+        if getattr(opt, name) != value
+    ]
+    if mismatches:
+        parser.error(
+            f"{opt.dataset} is inconsistent with MainSeed-RawCount-v2: "
+            + "; ".join(mismatches)
+        )
+
+
+validate_formal_configuration()
 print(opt)
 
 # test CUDA
 cuda = True if torch.cuda.is_available() else False
 """
-测试过程
+Evaluation routine.
 """
 def test_pre(mode):
     model_path = 'saved_model/separate/{}/seed{}/cpt_noext/{}-{}-{}_{}_{}_{}'.format(opt.dataset, opt.seed,
@@ -89,13 +130,13 @@ def test_pre(mode):
     model = TransAm(feature_size=opt.feature_size, hid_dim=opt.hidden_dim, n_heads=opt.n_heads, dim_head=opt.dim_head,
                     skip_dim=opt.skip_dim, num_layers=opt.num_layers,
                     len_clossness=opt.len_closeness, len_period=opt.len_period, len_trend=opt.len_trend,
-                    external_dim=opt.external_dim, dropout=opt.dropout,ext_flag=opt.ext_flag).to(device)  # 得到网络实例模型
+                    external_dim=opt.external_dim, dropout=opt.dropout,ext_flag=opt.ext_flag).to(device)
     model.load_state_dict(torch.load('{}/final_model.pt'.format(model_path)))
     model.eval()
     save_path = os.path.join('data/{}'.format(opt.dataset), mode)
     os.makedirs(save_path, exist_ok=True)
 
-    # 初始化记忆单元,shape是(batch,num_layer,hidden_len)
+    # Initialize evaluation accumulators.
 
     MSE = 100000
     datapath = os.path.join('data', opt.dataset)
@@ -113,7 +154,7 @@ def test_pre(mode):
         B, Tc, _, H, W = xc.shape
         with torch.no_grad():
             out = model(xc, xp, xt,ext)
-            # 计算和预期输出之间的MSE损失
+            # Compute prediction error against the target.
         pre = out.cpu().detach().numpy() * opt.scaler_X
         l = l.cpu().detach().reshape(B,-1, H, W).numpy() * opt.scaler_X
         total_mse += get_MSE(pre, l)

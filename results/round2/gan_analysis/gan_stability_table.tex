@@ -1,0 +1,24 @@
+\begin{table*}[!htbp]
+\centering
+\caption{Optional GAN stability analysis under the corrected MainSeed-RawCount-v2 protocol. Results are mean $\pm$ standard deviation over three seeds; lower is better.}
+\label{tab:gan-stability}
+\small
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{llccc}
+\toprule
+Dataset & Metric & FUPSI-noGAN & FUPSI-GAN & Lower variant \\
+\midrule
+TaxiBJ P1 & RMSE & $79.7437\pm0.0187$ & $79.9082\pm0.0552$ & noGAN \\
+ & MAE & $42.1333\pm0.0638$ & $42.6554\pm0.0357$ & noGAN \\
+TaxiBJ P2 & RMSE & $100.4167\pm0.0163$ & $100.6009\pm0.0570$ & noGAN \\
+ & MAE & $54.5649\pm0.0143$ & $55.0401\pm0.1324$ & noGAN \\
+TaxiBJ P3 & RMSE & $91.2122\pm0.0216$ & $91.4175\pm0.0360$ & noGAN \\
+ & MAE & $50.2293\pm0.0351$ & $50.7677\pm0.1036$ & noGAN \\
+TaxiBJ P4 & RMSE & $68.7643\pm0.0590$ & $68.9480\pm0.0548$ & noGAN \\
+ & MAE & $36.2842\pm0.0551$ & $36.7210\pm0.0436$ & noGAN \\
+BikeNYC & RMSE & $5.3890\pm0.0223$ & $6.0537\pm0.0542$ & noGAN \\
+ & MAE & $2.6189\pm0.0399$ & $3.0343\pm0.0264$ & noGAN \\
+\bottomrule
+\end{tabular}
+\parbox{0.96\textwidth}{\footnotesize\textit{Note.} The noGAN side uses the fresh round-two FUPSI rerun. The GAN side uses the previously regenerated corrected BCE-GAN runs. Tests are descriptive because $n=3$.}
+\end{table*}

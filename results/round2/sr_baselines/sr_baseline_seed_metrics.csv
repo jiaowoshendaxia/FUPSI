@@ -1,0 +1,31 @@
+dataset,method,seed,RMSE,MAE,protocol,source
+BikeNYC,FODE,2024,5.479126,2.608282,MainSeed-RawCount-v2,FODE/MainSeed_BikeNYC/seed2024/epochs100/test_metrics.csv
+BikeNYC,FODE,2025,5.487078,2.578859,MainSeed-RawCount-v2,FODE/MainSeed_BikeNYC/seed2025/epochs100/test_metrics.csv
+BikeNYC,FODE,2026,5.439771,2.570328,MainSeed-RawCount-v2,FODE/MainSeed_BikeNYC/seed2026/epochs100/test_metrics.csv
+BikeNYC,UrbanFM,2024,5.539753,2.624623,MainSeed-RawCount-v2,UrbanFM/MainSeed_BikeNYC/seed2024/epochs100/test_metrics.csv
+BikeNYC,UrbanFM,2025,5.477519,2.577573,MainSeed-RawCount-v2,UrbanFM/MainSeed_BikeNYC/seed2025/epochs100/test_metrics.csv
+BikeNYC,UrbanFM,2026,5.422303,2.561924,MainSeed-RawCount-v2,UrbanFM/MainSeed_BikeNYC/seed2026/epochs100/test_metrics.csv
+TaxiBJ P1,FODE,2024,93.729361,45.674106,MainSeed-RawCount-v2,FODE/MainSeed_TaxiBJ_P1/seed2024/epochs100/test_metrics.csv
+TaxiBJ P1,FODE,2025,94.118487,45.672475,MainSeed-RawCount-v2,FODE/MainSeed_TaxiBJ_P1/seed2025/epochs100/test_metrics.csv
+TaxiBJ P1,FODE,2026,93.745496,45.485313,MainSeed-RawCount-v2,FODE/MainSeed_TaxiBJ_P1/seed2026/epochs100/test_metrics.csv
+TaxiBJ P1,UrbanFM,2024,91.756258,44.364239,MainSeed-RawCount-v2,UrbanFM/MainSeed_TaxiBJ_P1/seed2024/epochs100/test_metrics.csv
+TaxiBJ P1,UrbanFM,2025,91.631243,44.029415,MainSeed-RawCount-v2,UrbanFM/MainSeed_TaxiBJ_P1/seed2025/epochs100/test_metrics.csv
+TaxiBJ P1,UrbanFM,2026,92.732098,45.124842,MainSeed-RawCount-v2,UrbanFM/MainSeed_TaxiBJ_P1/seed2026/epochs100/test_metrics.csv
+TaxiBJ P2,FODE,2024,116.519466,59.194312,MainSeed-RawCount-v2,FODE/MainSeed_TaxiBJ_P2/seed2024/epochs100/test_metrics.csv
+TaxiBJ P2,FODE,2025,117.625151,59.417656,MainSeed-RawCount-v2,FODE/MainSeed_TaxiBJ_P2/seed2025/epochs100/test_metrics.csv
+TaxiBJ P2,FODE,2026,116.467130,58.905537,MainSeed-RawCount-v2,FODE/MainSeed_TaxiBJ_P2/seed2026/epochs100/test_metrics.csv
+TaxiBJ P2,UrbanFM,2024,114.359532,57.449524,MainSeed-RawCount-v2,UrbanFM/MainSeed_TaxiBJ_P2/seed2024/epochs100/test_metrics.csv
+TaxiBJ P2,UrbanFM,2025,114.531942,57.402340,MainSeed-RawCount-v2,UrbanFM/MainSeed_TaxiBJ_P2/seed2025/epochs100/test_metrics.csv
+TaxiBJ P2,UrbanFM,2026,115.513153,57.735350,MainSeed-RawCount-v2,UrbanFM/MainSeed_TaxiBJ_P2/seed2026/epochs100/test_metrics.csv
+TaxiBJ P3,FODE,2024,107.869685,54.871251,MainSeed-RawCount-v2,FODE/MainSeed_TaxiBJ_P3/seed2024/epochs100/test_metrics.csv
+TaxiBJ P3,FODE,2025,108.109288,54.822052,MainSeed-RawCount-v2,FODE/MainSeed_TaxiBJ_P3/seed2025/epochs100/test_metrics.csv
+TaxiBJ P3,FODE,2026,107.318119,54.294265,MainSeed-RawCount-v2,FODE/MainSeed_TaxiBJ_P3/seed2026/epochs100/test_metrics.csv
+TaxiBJ P3,UrbanFM,2024,104.068729,52.669372,MainSeed-RawCount-v2,UrbanFM/MainSeed_TaxiBJ_P3/seed2024/epochs100/test_metrics.csv
+TaxiBJ P3,UrbanFM,2025,105.417512,52.980035,MainSeed-RawCount-v2,UrbanFM/MainSeed_TaxiBJ_P3/seed2025/epochs100/test_metrics.csv
+TaxiBJ P3,UrbanFM,2026,105.974945,53.385762,MainSeed-RawCount-v2,UrbanFM/MainSeed_TaxiBJ_P3/seed2026/epochs100/test_metrics.csv
+TaxiBJ P4,FODE,2024,80.691919,38.472983,MainSeed-RawCount-v2,FODE/MainSeed_TaxiBJ_P4/seed2024/epochs100/test_metrics.csv
+TaxiBJ P4,FODE,2025,80.985070,38.720305,MainSeed-RawCount-v2,FODE/MainSeed_TaxiBJ_P4/seed2025/epochs100/test_metrics.csv
+TaxiBJ P4,FODE,2026,80.524147,38.408231,MainSeed-RawCount-v2,FODE/MainSeed_TaxiBJ_P4/seed2026/epochs100/test_metrics.csv
+TaxiBJ P4,UrbanFM,2024,80.578699,38.435869,MainSeed-RawCount-v2,UrbanFM/MainSeed_TaxiBJ_P4/seed2024/epochs100/test_metrics.csv
+TaxiBJ P4,UrbanFM,2025,79.499294,37.934075,MainSeed-RawCount-v2,UrbanFM/MainSeed_TaxiBJ_P4/seed2025/epochs100/test_metrics.csv
+TaxiBJ P4,UrbanFM,2026,79.942174,38.167457,MainSeed-RawCount-v2,UrbanFM/MainSeed_TaxiBJ_P4/seed2026/epochs100/test_metrics.csv

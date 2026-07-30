@@ -1,0 +1,16 @@
+dataset,dataset_key,method,seed,RMSE,MAE,best_epoch,validation_RMSE,test_samples,parameters,device,checkpoint,source_file
+BikeNYC,BikeNYC,HRSTT_reimplementation,2024,5.333643,2.676814,147,5.225444,759,1029894,cuda,BikeNYC/seed2024/best_model.pt,BikeNYC/seed2024/test_metrics.csv
+BikeNYC,BikeNYC,HRSTT_reimplementation,2025,6.419287,2.968424,242,6.282592,759,1029894,cuda,BikeNYC/seed2025/best_model.pt,BikeNYC/seed2025/test_metrics.csv
+BikeNYC,BikeNYC,HRSTT_reimplementation,2026,5.633138,2.814673,235,5.652209,759,1029894,cuda,BikeNYC/seed2026/best_model.pt,BikeNYC/seed2026/test_metrics.csv
+TaxiBJ P1,TaxiBJ_P1,HRSTT_reimplementation,2024,18.566612,10.995978,35,16.321502,738,1181766,cuda,TaxiBJ_P1/seed2024/best_model.pt,TaxiBJ_P1/seed2024/test_metrics.csv
+TaxiBJ P1,TaxiBJ_P1,HRSTT_reimplementation,2025,19.120587,11.454046,16,18.053219,738,1181766,cuda,TaxiBJ_P1/seed2025/best_model.pt,TaxiBJ_P1/seed2025/test_metrics.csv
+TaxiBJ P1,TaxiBJ_P1,HRSTT_reimplementation,2026,18.537704,11.155422,24,17.367596,738,1181766,cuda,TaxiBJ_P1/seed2026/best_model.pt,TaxiBJ_P1/seed2026/test_metrics.csv
+TaxiBJ P2,TaxiBJ_P2,HRSTT_reimplementation,2024,18.613653,11.380556,55,17.724376,908,1177158,cuda,TaxiBJ_P2/seed2024/best_model.pt,TaxiBJ_P2/seed2024/test_metrics.csv
+TaxiBJ P2,TaxiBJ_P2,HRSTT_reimplementation,2025,18.615425,11.321719,61,17.471924,908,1177158,cuda,TaxiBJ_P2/seed2025/best_model.pt,TaxiBJ_P2/seed2025/test_metrics.csv
+TaxiBJ P2,TaxiBJ_P2,HRSTT_reimplementation,2026,18.567031,11.334215,46,17.580456,908,1177158,cuda,TaxiBJ_P2/seed2026/best_model.pt,TaxiBJ_P2/seed2026/test_metrics.csv
+TaxiBJ P3,TaxiBJ_P3,HRSTT_reimplementation,2024,18.055549,10.867353,76,19.866720,1024,1178310,cuda,TaxiBJ_P3/seed2024/best_model.pt,TaxiBJ_P3/seed2024/test_metrics.csv
+TaxiBJ P3,TaxiBJ_P3,HRSTT_reimplementation,2025,17.976569,10.833311,77,19.904838,1024,1178310,cuda,TaxiBJ_P3/seed2025/best_model.pt,TaxiBJ_P3/seed2025/test_metrics.csv
+TaxiBJ P3,TaxiBJ_P3,HRSTT_reimplementation,2026,17.825517,10.799818,130,20.114812,1024,1178310,cuda,TaxiBJ_P3/seed2026/best_model.pt,TaxiBJ_P3/seed2026/test_metrics.csv
+TaxiBJ P4,TaxiBJ_P4,HRSTT_reimplementation,2024,18.622944,10.550762,67,16.400096,1300,1179462,cuda,TaxiBJ_P4/seed2024/best_model.pt,TaxiBJ_P4/seed2024/test_metrics.csv
+TaxiBJ P4,TaxiBJ_P4,HRSTT_reimplementation,2025,18.579611,10.435981,108,16.286183,1300,1179462,cuda,TaxiBJ_P4/seed2025/best_model.pt,TaxiBJ_P4/seed2025/test_metrics.csv
+TaxiBJ P4,TaxiBJ_P4,HRSTT_reimplementation,2026,19.142992,10.780865,71,16.374291,1300,1179462,cuda,TaxiBJ_P4/seed2026/best_model.pt,TaxiBJ_P4/seed2026/test_metrics.csv

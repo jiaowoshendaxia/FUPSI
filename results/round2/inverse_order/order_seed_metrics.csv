@@ -1,0 +1,7 @@
+dataset,method,seed,RMSE,MAE,source
+TaxiBJ P4,FUPSI (prediction before SR),2024,68.822098,36.323893,saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P4/seed2024/0.01_0.1/-4-6/8-64-300_330_2_1/Generator/test_metrics.csv
+TaxiBJ P4,FUPSI (prediction before SR),2025,68.766566,36.307467,saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P4/seed2025/0.01_0.1/-4-6/8-64-300_330_2_1/Generator/test_metrics.csv
+TaxiBJ P4,FUPSI (prediction before SR),2026,68.704229,36.221358,saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P4/seed2026/0.01_0.1/-4-6/8-64-300_330_2_1/Generator/test_metrics.csv
+TaxiBJ P4,Inverse order (SR before prediction),2024,98.197617,43.149156,TaxiBJ_P4/seed2024/test_metrics.csv
+TaxiBJ P4,Inverse order (SR before prediction),2025,98.203308,43.159503,TaxiBJ_P4/seed2025/test_metrics.csv
+TaxiBJ P4,Inverse order (SR before prediction),2026,98.206993,43.272218,TaxiBJ_P4/seed2026/test_metrics.csv

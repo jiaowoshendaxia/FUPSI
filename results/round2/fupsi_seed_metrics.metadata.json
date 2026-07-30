@@ -1,0 +1,79 @@
+{
+  "protocol": "MainSeed-RawCount-v2",
+  "namespace": "ResidualMainE300P5",
+  "expected_rows": 15,
+  "rows": 15,
+  "metric_audit": "RMSE and MAE were recomputed from saved raw-count prediction/target arrays and matched the metric CSVs.",
+  "evidence": {
+    "TaxiBJ P1": {
+      "2024": {
+        "source": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P1/seed2024/0.01_0.1/-4-6/8-64-300_350_4_4/Generator/test_metrics.csv",
+        "sha256": "06847e95f3d6c8fbd61785ea74997a0246607d267d025c6a7264740c2a315ca5"
+      },
+      "2025": {
+        "source": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P1/seed2025/0.01_0.1/-4-6/8-64-300_350_4_4/Generator/test_metrics.csv",
+        "sha256": "1d5f1ebb514d66ed2dd00b3436698d77f3bef3f9afa054c593b2099e386ffac5"
+      },
+      "2026": {
+        "source": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P1/seed2026/0.01_0.1/-4-6/8-64-300_350_4_4/Generator/test_metrics.csv",
+        "sha256": "0e292b9b71f03438a2f392ff3a23d11871ad1c1021b30ee7c1e2b3dd51b5571b"
+      }
+    },
+    "TaxiBJ P2": {
+      "2024": {
+        "source": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P2/seed2024/0.9_0.1/-4-6/8-64-300_310_2_1/Generator/test_metrics.csv",
+        "sha256": "ecc90295f6b8ce725cc6787316f5a6e87a5898cae0562a28a1ee08c3ec64a4e9"
+      },
+      "2025": {
+        "source": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P2/seed2025/0.9_0.1/-4-6/8-64-300_310_2_1/Generator/test_metrics.csv",
+        "sha256": "898ad22913ab351a97f49a6d01f073785fa59bc08fc69dc85a2fd1cabb49edfb"
+      },
+      "2026": {
+        "source": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P2/seed2026/0.9_0.1/-4-6/8-64-300_310_2_1/Generator/test_metrics.csv",
+        "sha256": "574f37cf7507d4190bbc4bbeb3d760c8702a734c350adce3ff79ffeae338e9ed"
+      }
+    },
+    "TaxiBJ P3": {
+      "2024": {
+        "source": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P3/seed2024/0.01_0.1/-4-6/8-64-300_320_4_1/Generator/test_metrics.csv",
+        "sha256": "3115bf19896a1bde7b0e1a78a961f36337e57977f8db89fafc4e58641d5d57cb"
+      },
+      "2025": {
+        "source": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P3/seed2025/0.01_0.1/-4-6/8-64-300_320_4_1/Generator/test_metrics.csv",
+        "sha256": "5a21600bbf5090063ec83eb06d2a011710cfee89324ede0b1fa773820d82684f"
+      },
+      "2026": {
+        "source": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P3/seed2026/0.01_0.1/-4-6/8-64-300_320_4_1/Generator/test_metrics.csv",
+        "sha256": "0cec6897310734773d81f9f4fab0b5696a7cfd5712dda8da9b1bd3016dfa5524"
+      }
+    },
+    "TaxiBJ P4": {
+      "2024": {
+        "source": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P4/seed2024/0.01_0.1/-4-6/8-64-300_330_2_1/Generator/test_metrics.csv",
+        "sha256": "7bca0dcffddc7aa4377cc89e913e81d87692832ac239fe7fcebbc499383bd049"
+      },
+      "2025": {
+        "source": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P4/seed2025/0.01_0.1/-4-6/8-64-300_330_2_1/Generator/test_metrics.csv",
+        "sha256": "dc92185be61263206363ced2a4a1d146a0a3fd7970db8fb63812a3ca69f14557"
+      },
+      "2026": {
+        "source": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_TaxiBJ_P4/seed2026/0.01_0.1/-4-6/8-64-300_330_2_1/Generator/test_metrics.csv",
+        "sha256": "93c2fbe5af8f4d3abc2eb651fc3da3f1065b4922259e201b642fbe9817f1fbca"
+      }
+    },
+    "BikeNYC": {
+      "2024": {
+        "source": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_BikeNYC/seed2024/0.9_0.1/-4-6/8-64-300_350_4_1/Generator/test_metrics.csv",
+        "sha256": "d3f4ae3a0473583745c6a42577da27cbd5ca436da160103b36dd8a1244d11047"
+      },
+      "2025": {
+        "source": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_BikeNYC/seed2025/0.9_0.1/-4-6/8-64-300_350_4_1/Generator/test_metrics.csv",
+        "sha256": "15afae695634e012ab964e0a301584bc8dee9aab71823f151bda8e436fc07def"
+      },
+      "2026": {
+        "source": "saved_model/to_stage/no_ext(r)/ResidualMainE300P5_BikeNYC/seed2026/0.9_0.1/-4-6/8-64-300_350_4_1/Generator/test_metrics.csv",
+        "sha256": "67ae1b21ff77880f713cd2c60fbf2859131726fb7f0e1b78f4e4e648e1f82f26"
+      }
+    }
+  }
+}

@@ -1,10 +1,11 @@
-torch==2.3.0
-numpy==2.5.1
-scipy==1.18.0
-pandas==3.0.3
-matplotlib==3.9.0
+torch==2.1.2
+numpy==1.26.3
+scipy==1.15.3
+pandas==2.3.3
+matplotlib==3.8.2
 seaborn==0.13.2
 h5py==3.16.0
-tqdm
+scikit-learn==1.7.2
+tqdm==4.64.1
 einops==0.8.2
 pytorch-ssim==0.1

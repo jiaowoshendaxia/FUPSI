@@ -24,7 +24,7 @@ import torch.nn.functional as F
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_CODE_ROOT = Path("/root/autodl-tmp/fupsi")
+DEFAULT_CODE_ROOT = ROOT
 DEFAULT_CUFAR_ROOT = DEFAULT_CODE_ROOT / "revision" / "external_baselines" / "CUFAR"
 DEFAULT_OUTPUT = DEFAULT_CODE_ROOT / "revision" / "complexity" / "sr_pipeline_mainseed"
 
@@ -252,7 +252,11 @@ def main() -> None:
     for config in CONFIGS:
         if config.alias not in selected_datasets:
             continue
-        methods = [method for method in (["FUPSI", "UrbanFM"] + (["FODE"] if "TaxiBJ" in config.alias else [])) if method in selected_methods]
+        methods = [
+            method
+            for method in ("FUPSI", "UrbanFM", "FODE")
+            if method in selected_methods
+        ]
         for method in methods:
             print(f"Profiling {config.paper_name} {method}", flush=True)
             predictor, sr_model, pipeline = build_models(config, method, args.code_root, args.cufar_root, device)
@@ -306,6 +310,11 @@ def main() -> None:
             torch.cuda.empty_cache()
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
+    expected_rows = len(selected_datasets) * len(selected_methods)
+    if len(rows) != expected_rows:
+        raise RuntimeError(
+            f"Expected {expected_rows} complexity rows, received {len(rows)}"
+        )
     write_csv(args.output_dir / "sr_pipeline_complexity_detailed.csv", rows)
 
     md = [

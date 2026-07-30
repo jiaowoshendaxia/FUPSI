@@ -1,0 +1,43 @@
+\begin{table*}[!htbp]
+\centering
+\caption{Unified raw-count main results under the MainSeed-RawCount-v2 protocol. Results are mean $\pm$ standard deviation over seeds 2024, 2025, and 2026; lower is better.}
+\label{tab:unified-main-results}
+\small
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{llcc}
+\toprule
+Dataset & Method & RMSE & MAE \\
+\midrule
+TaxiBJ P1 & FUPSI & \underline{$79.7437\pm0.0187$} & \underline{$42.1333\pm0.0638$} \\
+TaxiBJ P1 & HRSTT (reimplementation) & \textbf{$18.7416\pm0.3285$} & \textbf{$11.2018\pm0.2325$} \\
+TaxiBJ P1 & UrbanFM & $92.0399\pm0.6027$ & $44.5062\pm0.5613$ \\
+TaxiBJ P1 & FODE & $93.8644\pm0.2202$ & $45.6106\pm0.1085$ \\
+TaxiBJ P1 & HA-Mean & $114.0945\pm0.0000$ & $70.0880\pm0.0000$ \\
+\addlinespace
+TaxiBJ P2 & FUPSI & $100.4167\pm0.0163$ & $54.5649\pm0.0143$ \\
+TaxiBJ P2 & HRSTT (reimplementation) & \textbf{$18.5987\pm0.0274$} & \textbf{$11.3455\pm0.0310$} \\
+TaxiBJ P2 & UrbanFM & $114.8015\pm0.6223$ & $57.5291\pm0.1802$ \\
+TaxiBJ P2 & FODE & $116.8706\pm0.6540$ & $59.1725\pm0.2568$ \\
+TaxiBJ P2 & HA-Mean & \underline{$84.5360\pm0.0000$} & \underline{$50.2793\pm0.0000$} \\
+\addlinespace
+TaxiBJ P3 & FUPSI & \underline{$91.2122\pm0.0216$} & \underline{$50.2293\pm0.0351$} \\
+TaxiBJ P3 & HRSTT (reimplementation) & \textbf{$17.9525\pm0.1169$} & \textbf{$10.8335\pm0.0338$} \\
+TaxiBJ P3 & UrbanFM & $105.1537\pm0.9801$ & $53.0117\pm0.3592$ \\
+TaxiBJ P3 & FODE & $107.7657\pm0.4057$ & $54.6625\pm0.3199$ \\
+TaxiBJ P3 & HA-Mean & $96.2766\pm0.0000$ & $56.0220\pm0.0000$ \\
+\addlinespace
+TaxiBJ P4 & FUPSI & \underline{$68.7643\pm0.0590$} & \underline{$36.2842\pm0.0551$} \\
+TaxiBJ P4 & HRSTT (reimplementation) & \textbf{$18.7818\pm0.3135$} & \textbf{$10.5892\pm0.1756$} \\
+TaxiBJ P4 & UrbanFM & $80.0067\pm0.5426$ & $38.1791\pm0.2511$ \\
+TaxiBJ P4 & FODE & $80.7337\pm0.2333$ & $38.5338\pm0.1647$ \\
+TaxiBJ P4 & HA-Mean & $73.5333\pm0.0000$ & $43.2783\pm0.0000$ \\
+\addlinespace
+BikeNYC & FUPSI & \textbf{$5.3890\pm0.0223$} & $2.6189\pm0.0399$ \\
+BikeNYC & HRSTT (reimplementation) & $5.7954\pm0.5607$ & $2.8200\pm0.1459$ \\
+BikeNYC & UrbanFM & $5.4799\pm0.0588$ & \underline{$2.5880\pm0.0326$} \\
+BikeNYC & FODE & \underline{$5.4687\pm0.0253$} & \textbf{$2.5858\pm0.0199$} \\
+BikeNYC & HA-Mean & $21.5937\pm0.0000$ & $11.4338\pm0.0000$ \\
+\bottomrule
+\end{tabular}
+\parbox{0.96\textwidth}{\footnotesize\textit{Note.} HRSTT is a documented reimplementation because no verified official implementation was identified. Super-resolution baselines receive the same seed-matched FUPSI-predicted coarse maps. Best results are bold and second-best results are underlined.}
+\end{table*}
